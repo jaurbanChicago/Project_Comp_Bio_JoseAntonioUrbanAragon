@@ -19,7 +19,7 @@ Genetic drift is the random change of allele frequencies through time in populat
 
 
 
-# Models Used to Model Genetic Drift
+# Models Used to Analyze Genetic Drift
 
 In this section of the vignette, we will introduce three basic models that can be used to analyze properties of genetic drift:
   
