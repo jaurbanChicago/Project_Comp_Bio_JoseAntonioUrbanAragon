@@ -1,0 +1,18 @@
+---
+title: Genetic Drift in a Finite Population with Discrete Generations as an Example
+  of a Markov Chain
+author: "Jose Antonio Urban Aragon"
+date: 3/13/2022
+---
+
+
+
+
+# Pre-Requisites
+  * [Wright-Fisher Model](https://stephens999.github.io/fiveMinuteStats/wright_fisher_model.html)
+  * [Discrete Markov Chains](http://stephens999.github.io/fiveMinuteStats/markov_chains_discrete_intro.html)
+  * Basic notions of probability theory
+  
+
+
+
