@@ -14,9 +14,23 @@ date: 3/13/2022
   
 # Genetic Drift in Finite Populations
 
-Much population genetic theory concentrates on describing the changes of allele frequencies through time. The two most important factors influencing allele trajectories through time are natural selection and **genetic drift** [1]. In these vignettes, we will focus on genetic drift and how this process can be modelled as a [stochastic process](https://en.wikipedia.org/wiki/Stochastic_process).  
+Much population genetic theory concentrates on describing the changes of allele frequencies through time. The two most important factors influencing allele trajectories through time are natural selection and **genetic drift** [1]. In these vignettes, we will focus on genetic drift and how this process may be modeled as a [stochastic process](https://en.wikipedia.org/wiki/Stochastic_process) by using an idealized scenario called the [Wright-Fisher Model](https://stephens999.github.io/fiveMinuteStats/wright_fisher_model.html).    
+  
+Genetic drift is the random change of allele frequencies through time in populations of finite size [1,2]. Different random processes could affect the outcome of genetic drift, and they might have nothing to do with the individuals' fitness [1]. For example, some individuals may die before they reach reproductive age because of extrinsic effects not related to their genetic makeup [1]. Additionally, there is inherent randomness in Mendelian segregation, and these effects could become more apparent when populations are small (we will shortly see why this is the case) [1,2].  
 
-Genetic drift is the random change of allele frequencies through time in populations of finite size [1,2]. Genetic drift may be explained by different random processes that could affect the organisms' chance of reproduction and have nothing to do with their fitness. For example, some individuals may die before they reach reproductive age because of extrinsic effect not related to their genetic make-up [1].
+
+
+# Models of Genetic Drift 
+
+In this section of the vignette, we will introduce three basic models that can be used to model properties of genetic drift:
+  
+  * Binomial distribution  
+  * Markov chain  
+  * Diffusion process (continuous time approximation to the Markov chain)  
+
+### Binomial Distribution in Genetic Drift  
+
+
 
 
 
