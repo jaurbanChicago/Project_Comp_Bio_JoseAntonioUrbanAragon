@@ -1,6 +1,5 @@
 ---
-title: Genetic Drift in a Finite Population with Discrete Generations as an Example
-  of a Markov Chain
+title: Genetic Drift in a Finite Population as an Example of Stochastic Modeling
 author: "Jose Antonio Urban Aragon"
 date: 3/13/2022
 ---
@@ -20,7 +19,7 @@ Genetic drift is the random change of allele frequencies through time in populat
 
 
 
-# Models of Genetic Drift 
+# Models Used to Model Genetic Drift
 
 In this section of the vignette, we will introduce three basic models that can be used to analyze properties of genetic drift:
   
@@ -28,7 +27,7 @@ In this section of the vignette, we will introduce three basic models that can b
   * Markov chain  
   * Diffusion process (continuous time approximation to the Markov chain)  
 
-### Binomial Distribution in Genetic Drift  
+### Binomial Distribution  
 
 
 
