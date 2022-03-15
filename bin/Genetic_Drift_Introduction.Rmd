@@ -36,7 +36,7 @@ Before delving into the specific probabilistic models of genetic drift, it is im
 
 \begingroup
 \fontfamily{ppl}\fontsize{12}{16}\selectfont
-Figure 1. **A.** Schematic of the Wright-Fisher model. Sampling error -and genetic drift-, happens in the random draw of gametes from $t$ generation to $t+1$ generation. _Image from Hamilton, M.B. (2008)_ **B.** Sewall Wright (undated) with a guinea pig as a professor at the University of Chicago. _University of Chicago Photographic Archive, [apf digital item number, e.g., apf12345], Hanna Holborn Gray Special Collections Research Center, University of Chicago Library._ **C.** Ronald Fisher at his calculator in 1958 _(Fisher Memorial Trust)_.
+Figure 1. **A.** Schematic of the Wright-Fisher model. Sampling error -and genetic drift-, happens in the random draw of gametes from  generation $t$ to generation $t+1$. _Image from Hamilton, M.B. (2008)_ **B.** Sewall Wright (undated) with a guinea pig as a professor at the University of Chicago. _University of Chicago Photographic Archive, [apf digital item number, e.g., apf12345], Hanna Holborn Gray Special Collections Research Center, University of Chicago Library._ **C.** Ronald Fisher at his calculator in 1958 _(Fisher Memorial Trust)_.
 \endgroup
 </center>
   
