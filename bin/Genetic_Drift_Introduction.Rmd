@@ -11,6 +11,7 @@ date: 3/13/2022
   * Basic notions of probability theory
   * Basic notions of population genetics
   
+
 # Genetic Drift in Finite Populations
 
 Much population genetic theory concentrates on describing the changes of allele frequencies through time. The two most important factors influencing allele trajectories through time are natural selection and **genetic drift** [1]. In these vignettes, we will focus on genetic drift and how this process may be modeled as a [stochastic process](https://en.wikipedia.org/wiki/Stochastic_process) in a [Wright-Fisher population](https://stephens999.github.io/fiveMinuteStats/wright_fisher_model.html).
@@ -18,16 +19,41 @@ Much population genetic theory concentrates on describing the changes of allele 
 Genetic drift is the random change of allele frequencies through time in populations of finite size [1,2]. Different random processes could affect the outcome of genetic drift, and they might have nothing to do with the individuals' fitness [1]. For example, some individuals may die before they reach reproductive age because of extrinsic effects not related to their genetic makeup [1]. Additionally, there is inherent randomness in Mendelian segregation, and these effects could become more apparent when populations are small (we will shortly see why this is the case) [1,2].  
 
 
+# Brief Introduction to a Wright-Fisher Model 
+
+Before delving into the specific probabilistic models of genetic drift, it is important to summarize the main basic assumptions of the Wright-Fisher population. The Wright-Fisher population is an idealized biological scenario where the models of genetic drift are useful to describe allele frequencies changes due to random sampling error [1]. Although the Wright-Fisher model is biologically unrealistic, it has been extremely useful to model genetic drift (and other evolutionary processes) in a relatively simple fashion [1]. Some of the basic assumptions of the Wright-Fisher model include [1]:
+
+  * discrete, non-overlapping generations
+  * numbers of females and males are equal
+  * size of population ($N$ individuals ) remains constant through time and is finite
+  * no natural selection (all individuals are equal in their production of gametes and all gametes are equally viable)
+  * infinite pool of gametes
+  * finite sample of $2N$ alleles is drawn from the gamete pool to form the next generation of $N$ individuals 
+  * the sampling errors that originate genetic drift occur when the $2N$ alleles are drawn from the population´s gamete pool
+  
+<center>
+![](Figure_1.png)
+
+\begingroup
+\fontfamily{ppl}\fontsize{12}{16}\selectfont
+Figure 1. **A.** Schematic of the Wright-Fisher model. Sampling error -and genetic drift-, happens in the random draw of gametes from $t$ generation to $t+1$ generation. _Image from Hamilton, M.B. (2008)_ **B.** Sewall Wright (undated) with a guinea pig as a professor at the University of Chicago. _University of Chicago Photographic Archive, [apf digital item number, e.g., apf12345], Hanna Holborn Gray Special Collections Research Center, University of Chicago Library._ **C.** Ronald Fisher at his calculator in 1958 _(Fisher Memorial Trust)_.
+\endgroup
+</center>
+  
+
 
 # Models Used to Analyze Genetic Drift
 
 In this section of the vignette, we will introduce three basic models that can be used to analyze properties of genetic drift:
   
   * Binomial distribution  
-  * Markov chain  
+  * Markov chain
   * Diffusion process (continuous time approximation to the Markov chain)  
 
 ### Binomial Distribution  
+
+To understand genetic drift of a single two-allele locus in a Wright-Fisher population, we must first get into the details of an important discrete probability distribution: **the binomial distribution.**  
+A binomial distribution is a discrete probability distribution that defines the probability distribution for the sum of $N$ independent samples of a Bernoulli variable [1].
 
 
 

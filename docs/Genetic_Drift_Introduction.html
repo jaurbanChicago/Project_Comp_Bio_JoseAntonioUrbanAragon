@@ -367,7 +367,7 @@ Example of Stochastic Modeling</h1>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -378,8 +378,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -392,9 +392,9 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -418,33 +418,36 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree1e475f283a5b10ade3a7872ad6a368df76505311targetblank1e475f2a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreeaa49b2d1472d2ee647845d82643813433c6600b4targetblankaa49b2da">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/1e475f283a5b10ade3a7872ad6a368df76505311" target="_blank">1e475f2</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/aa49b2d1472d2ee647845d82643813433c6600b4" target="_blank">aa49b2d</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree1e475f283a5b10ade3a7872ad6a368df76505311targetblank1e475f2a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreeaa49b2d1472d2ee647845d82643813433c6600b4targetblankaa49b2da"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -454,7 +457,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/1e475f283a5b10ade3a7872ad6a368df76505311" target="_blank">1e475f2</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/aa49b2d1472d2ee647845d82643813433c6600b4" target="_blank">aa49b2d</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -470,12 +473,15 @@ were generated:
 <pre><code>
 Untracked files:
     Untracked:  .DS_Store
+    Untracked:  .Rhistory
+    Untracked:  bin/Figure_1.png
 
 Unstaged changes:
     Deleted:    New Folder With Items/.DS_Store
     Deleted:    New Folder With Items/Genetic_Drift_Markov_Chain.Rmd
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
+    Modified:   bin/Genetic_Drift_Introduction.Rmd
     Deleted:    index.html
 
 </code></pre>
@@ -522,6 +528,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/aa49b2d1472d2ee647845d82643813433c6600b4/docs/Genetic_Drift_Introduction.html" target="_blank">aa49b2d</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-14
+</td>
+<td>
+Updated intro html
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -614,6 +637,47 @@ randomness in Mendelian segregation, and these effects could become more
 apparent when populations are small (we will shortly see why this is the
 case) [1,2].</p>
 </div>
+<div id="brief-introduction-to-a-wright-fisher-model"
+class="section level1">
+<h1>Brief Introduction to a Wright-Fisher Model</h1>
+<p>Before delving into the specific probabilistic models of genetic
+drift, it is important to summarize the main basic assumptions of the
+Wright-Fisher population. The Wright-Fisher population is an idealized
+biological scenario where the models of genetic drift are useful to
+describe allele frequencies changes due to random sampling error [1].
+Although the Wright-Fisher model is biologically unrealistic, it has
+been extremely useful to model genetic drift (and other evolutionary
+processes) in a relatively simple fashion [1]. Some of the basic
+assumptions of the Wright-Fisher model include [1]:</p>
+<ul>
+<li>discrete, non-overlapping generations</li>
+<li>numbers of females and males are equal</li>
+<li>size of population (<span class="math inline">\(N\)</span>
+individuals ) remains constant through time and is finite</li>
+<li>no natural selection (all individuals are equal in their production
+of gametes and all gametes are equally viable)</li>
+<li>infinite pool of gametes</li>
+<li>finite sample of <span class="math inline">\(2N\)</span> alleles is
+drawn from the gamete pool to form the next generation of <span
+class="math inline">\(N\)</span> individuals</li>
+<li>the sampling errors that originate genetic drift occur when the
+<span class="math inline">\(2N\)</span> alleles are drawn from the
+population´s gamete pool</li>
+</ul>
+<center>
+<p><img src="Figure_1.png" /></p>
+Figure 1. <strong>A.</strong> Schematic of the Wright-Fisher model.
+Sampling error -and genetic drift-, happens in the random draw of
+gametes from <span class="math inline">\(t\)</span> generation to <span
+class="math inline">\(t+1\)</span> generation. <em>Image from Hamilton,
+M.B. (2008)</em> <strong>B.</strong> Sewall Wright (undated) with a
+guinea pig as a professor at the University of Chicago. <em>University
+of Chicago Photographic Archive, [apf digital item number, e.g.,
+apf12345], Hanna Holborn Gray Special Collections Research Center,
+University of Chicago Library.</em> <strong>C.</strong> Ronald Fisher at
+his calculator in 1958 <em>(Fisher Memorial Trust)</em>.
+</center>
+</div>
 <div id="models-used-to-analyze-genetic-drift" class="section level1">
 <h1>Models Used to Analyze Genetic Drift</h1>
 <p>In this section of the vignette, we will introduce three basic models
@@ -621,13 +685,20 @@ that can be used to analyze properties of genetic drift:</p>
 <ul>
 <li>Binomial distribution<br />
 </li>
-<li>Markov chain<br />
-</li>
+<li>Markov chain</li>
 <li>Diffusion process (continuous time approximation to the Markov
 chain)</li>
 </ul>
 <div id="binomial-distribution" class="section level3">
 <h3>Binomial Distribution</h3>
+<p>To understand genetic drift of a single two-allele locus in a
+Wright-Fisher population, we must first get into the details of an
+important discrete probability distribution: <strong>the binomial
+distribution.</strong><br />
+A binomial distribution is a discrete probability distribution that
+defines the probability distribution for the sum of <span
+class="math inline">\(N\)</span> independent samples of a Bernoulli
+variable [1].</p>
 </div>
 </div>
 
