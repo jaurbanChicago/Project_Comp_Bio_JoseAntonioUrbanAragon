@@ -42,7 +42,7 @@ Figure 1. **A.** Schematic of the Wright-Fisher model. Sampling error -and genet
   
 
 
-# Models Used to Analyze Genetic Drift
+# Models Used to Describe Genetic Drift
 
 In this section of the vignette, we will introduce three basic models that can be used to analyze properties of genetic drift:
   
