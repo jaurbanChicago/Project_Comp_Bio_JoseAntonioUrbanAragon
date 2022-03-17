@@ -106,7 +106,7 @@ ggplot(df,aes(x=p,y=SE))+geom_line()+xlab("Allele Frequency p")+ylab("SE")+ggtit
 
 The above plot confirms what we just discussed. The maximum variability of allele frequency changes happens when both alleles are very close in frequency[1].  
 
-Another feature affecting the variability of binomial sampling errors in genetic drift is the **population size**. As population size increases, the variability of allele frequencies becomes less and less, constraining the spectrum of possible changes in allele frequencies moving forward in time and reducing the variance of the sampling error process.  
+Another feature affecting the variability of binomial sampling errors in genetic drift is the **population size**. As population size increases, the variability of allele frequencies becomes less and less, constraining the spectrum of possible changes in allele frequencies moving forward in time and reducing the variance of the sampling error process [1,2].  
 
 The following code will illustrate this:  
 
@@ -142,7 +142,7 @@ Both features (population size and allele frequencies at time $t$) will be of pa
 
 ### Markov Chain
 
-The Markov chain model of genetic drift will be explained in the following [vignette]().
+The Markov chain model of genetic drift will be explained in the following [vignette](https://jaurbanchicago.github.io/docs/Genetic_Drift_Markov_Model.html).
 
 
 
@@ -150,6 +150,14 @@ The Markov chain model of genetic drift will be explained in the following [vign
 
 
 The diffusion process model of genetic drift will be explained in the following [vignette]().
+
+
+
+# References
+
+1. Hamilton, M. B. (2008). Population genetics. John Wiley & Sons.
+
+2. Hartl, D. L. (2020). A primer of population genetics and genomics. Oxford University Press.
 
 
 sessionInfo()
