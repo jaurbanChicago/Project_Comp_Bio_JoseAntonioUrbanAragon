@@ -142,7 +142,7 @@ Both features (population size and allele frequencies at time $t$) will be of pa
 
 ### Markov Chain
 
-The Markov chain model of genetic drift will be explained in the following [vignette](https://jaurbanchicago.github.io/docs/Genetic_Drift_Markov_Model.html).
+The Markov chain model of genetic drift will be explained in the following [vignette](https://jaurbanchicago.github.io/docs/Genetic_Drift_Markov.html).
 
 
 
