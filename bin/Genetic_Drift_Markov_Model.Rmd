@@ -36,4 +36,4 @@ p_{M0} & p_{M1} & ... & p_{MM}
 \mathbb{This \space is \space an \space stochastic \space matrix, so \space all \space rows \space must \space sum \space to \space 1}
 $$
 
-
+Next, we are going to describe some important characteristics and features of a Markov chain that will be relevant for understanding its relationship with genetic drift
