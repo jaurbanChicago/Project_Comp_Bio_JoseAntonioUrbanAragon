@@ -155,9 +155,9 @@ The diffusion process model of genetic drift will be explained in the following 
 
 # References
 
-1. Hamilton, M. B. (2008). Population genetics. John Wiley & Sons.
+1. Hamilton, M. B. (2008). *Population genetics*. John Wiley & Sons, 53-73.
 
-2. Hartl, D. L. (2020). A primer of population genetics and genomics. Oxford University Press.
+2. Hartl, D. L. (2020).*A primer of population genetics and genomics*. Oxford University Press,147-173.
 
 
 sessionInfo()
