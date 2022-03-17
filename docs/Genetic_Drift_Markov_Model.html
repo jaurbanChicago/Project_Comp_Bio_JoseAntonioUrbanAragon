@@ -366,7 +366,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -377,8 +377,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -391,9 +391,9 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -417,33 +417,36 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreef03a9bd39f53716f040ae8f4a022aa649096624atargetblankf03a9bda">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreee80756dc162fa96a5d08a9ee21cc25d2337851catargetblanke80756da">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/f03a9bd39f53716f040ae8f4a022aa649096624a" target="_blank">f03a9bd</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/e80756dc162fa96a5d08a9ee21cc25d2337851ca" target="_blank">e80756d</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreef03a9bd39f53716f040ae8f4a022aa649096624atargetblankf03a9bda"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreee80756dc162fa96a5d08a9ee21cc25d2337851catargetblanke80756da"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -453,7 +456,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/f03a9bd39f53716f040ae8f4a022aa649096624a" target="_blank">f03a9bd</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/e80756dc162fa96a5d08a9ee21cc25d2337851ca" target="_blank">e80756d</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -476,6 +479,7 @@ Unstaged changes:
     Deleted:    New Folder With Items/Genetic_Drift_Markov_Chain.Rmd
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
+    Modified:   bin/Genetic_Drift_Markov_Model.Rmd
     Deleted:    index.html
 
 </code></pre>
@@ -522,6 +526,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/e80756dc162fa96a5d08a9ee21cc25d2337851ca/docs/Genetic_Drift_Markov_Model.html" target="_blank">e80756d</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+Added Genetic_Drift_Markov_Model.html
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -825,27 +846,6 @@ class="math inline">\(t\)</span> depends only on the state at time <span
 class="math inline">\(t-1\)</span> [1,2].</p>
 <p>Some important mathematical notation to describe a discrete Markov
 chain is [2,3]:</p>
-<p><span class="math display">\[
-P(E_{n+1}|E_{n})=i,E_{n-1}=i_{n-1},...,E_1=i_1,E_0=i_0)=P(E_{n+1}=j|E_n=i)\\
-\mathbb{A \space discrete \space Markov \space is \space homogeneous
-\space if:}\\
-P(E_{n+1}|E_{n})=P(E_i=j|E_{i-1}=i) \space \mathbb{for \space all}
-\space n, \mathbb{so} \space P(E_i=j|E_{i-1})=P_{ij}\\
-P_{ij} \gt 0;i,j \ge 0; \sum_{j=0}^{\infty}P_{ij}=1 \\
-\mathbb{A \space transition \space probability \space matrix \space can
-\space be \space assembled \space to \space represent \space the \space
-probabilities \space of \space} P_{ij} \space \\
-P_{ij}= \begin{pmatrix}
-p_{00} &amp; p_{01} &amp; ... &amp; p_{0M}\\
-p_{00} &amp; p_{11} &amp; ... &amp; p_{1M} \\
-.\\
-.\\
-.\\
-p_{M0} &amp; p_{M1} &amp; ... &amp; p_{MM}
-\end{pmatrix} \\
-\mathbb{This \space is \space an \space stochastic \space matrix, so
-\space all \space rows \space must \space sum \space to \space 1}
-\]</span></p>
 <p>Next, we are going to describe some important characteristics and
 features of a Markov chain that will be relevant for understanding its
 relationship with genetic drift</p>
