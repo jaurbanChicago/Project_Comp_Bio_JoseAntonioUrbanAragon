@@ -19,21 +19,6 @@ Let´s consider a discrete random variable $X$, which at time points $0,1,2,3,..
 
 Some important mathematical notation to describe a discrete Markov chain is [2,3]:  
 
-$$
-P(E_{n+1}|E_{n})=i,E_{n-1}=i_{n-1},...,E_1=i_1,E_0=i_0)=P(E_{n+1}=j|E_n=i)\\
-\mathbb{A \space discrete \space Markov \space is \space homogeneous \space if:}\\
-P(E_{n+1}|E_{n})=P(E_i=j|E_{i-1}=i) \space \mathbb{for \space all} \space n, \mathbb{so} \space P(E_i=j|E_{i-1})=P_{ij}\\
-P_{ij} \gt 0;i,j \ge 0; \sum_{j=0}^{\infty}P_{ij}=1 \\
-\mathbb{A \space transition \space probability \space matrix \space can \space be \space assembled \space to \space represent \space the \space probabilities \space of \space} P_{ij} \space \\
-P_{ij}= \begin{pmatrix}
-p_{00} & p_{01} & ... & p_{0M}\\
-p_{00} & p_{11} & ... & p_{1M} \\
-.\\
-.\\
-.\\
-p_{M0} & p_{M1} & ... & p_{MM}
-\end{pmatrix} \\
-\mathbb{This \space is \space an \space stochastic \space matrix, so \space all \space rows \space must \space sum \space to \space 1}
-$$
+
 
 Next, we are going to describe some important characteristics and features of a Markov chain that will be relevant for understanding its relationship with genetic drift
