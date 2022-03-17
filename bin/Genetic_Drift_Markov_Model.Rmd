@@ -14,7 +14,7 @@ date: "3/16/2022"
 
 Before getting into the specific details of the relationship between Markov chains and genetic drift, it is necessary to briefly explain what a discrete, finite Markov chain is.    
   
-Let´s consider a discrete random variable $X$, which at time points $0,1,2,3,...$, takes values $0,1,2,...,M$. Therefore, it is precise to say that each state $E_i$, $X$ takes the value $i$ [2]. This means that at each state $E_i$ at some time $t$, $X$ is in some state $E_i$. A variable is said to be **Markovian** if the probability of a certain outcome in next time step $t+1$ depends only on the present state at time $t$ and is memoryless with regard to any previous time step $t-1,t-2,...$. Therefore, we can now define **a discrete Markov chain** as a sequence of discrete random variables in which the probability distribution of the different states at each time $t$ depends only on the state at time $t-1$ [1,2].
+Let´s consider a discrete random variable $X$, which at time points $0,1,2,3,...$, takes values $0,1,2,...,M$. Therefore, it is precise to say that each state $E_i$, $X$ takes the value $i$ [2]. This means that at each state $E_i$ at some time $t$, $X$ is in some state $E_i$. A variable is said to be **Markovian** if the probability of a certain outcome in the next time step $t+1$ depends only on the present state at time $t$ and is memoryless with regard to any previous time step $t-1,t-2,...$. Therefore, we can now define **a discrete Markov chain** as a sequence of discrete random variables in which the probability distribution of the different states at each time $t$ depends only on the state at time $t-1$ [1,2].
 
 
 Some important mathematical notation to describe a discrete Markov chain is [2,3]:  
