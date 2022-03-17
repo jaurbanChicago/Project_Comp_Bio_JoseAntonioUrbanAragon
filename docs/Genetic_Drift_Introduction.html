@@ -427,10 +427,10 @@ changes </a>
 <div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has staged changes. To know which version of the
-R Markdown file created these results, you’ll want to first commit it to
-the Git repo. If you’re still working on the analysis, you can ignore
-this warning. When you’re finished, you can run
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
 <code>wflow_publish</code> to commit the R Markdown file and build the
 HTML.</p>
 </div>
@@ -523,15 +523,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree62ed45081892587635a624b7e6e3de969ae85b35targetblank62ed450a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree560a9f1c63551ccc061cce6abf4a6af3d0d21de8targetblank560a9f1a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/62ed45081892587635a624b7e6e3de969ae85b35" target="_blank">62ed450</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/560a9f1c63551ccc061cce6abf4a6af3d0d21de8" target="_blank">560a9f1</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree62ed45081892587635a624b7e6e3de969ae85b35targetblank62ed450a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree560a9f1c63551ccc061cce6abf4a6af3d0d21de8targetblank560a9f1a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -541,7 +541,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/62ed45081892587635a624b7e6e3de969ae85b35" target="_blank">62ed450</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/560a9f1c63551ccc061cce6abf4a6af3d0d21de8" target="_blank">560a9f1</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -558,7 +558,7 @@ were generated:
 Untracked files:
     Untracked:  .DS_Store
     Untracked:  .Rhistory
-    Untracked:  bin/figure/
+    Untracked:  bin/Genetic_Drift_Markov_Model.Rmd
 
 Unstaged changes:
     Deleted:    New Folder With Items/.DS_Store
@@ -567,9 +567,6 @@ Unstaged changes:
     Deleted:    New Folder With Items/include/footer.html
     Modified:   bin/Genetic_Drift_Introduction.Rmd
     Deleted:    index.html
-
-Staged changes:
-    Modified:   bin/Genetic_Drift_Introduction.Rmd
 
 </code></pre>
 <p>
@@ -615,6 +612,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/560a9f1c63551ccc061cce6abf4a6af3d0d21de8/bin/Genetic_Drift_Introduction.Rmd" target="_blank">560a9f1</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-16
+</td>
+<td>
+Updated intro rmd and html
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/560a9f1c63551ccc061cce6abf4a6af3d0d21de8/docs/Genetic_Drift_Introduction.html" target="_blank">560a9f1</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-16
+</td>
+<td>
+Updated intro rmd and html
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -931,8 +962,8 @@ p_{t+1}= \mathbb{frequency \space allele \space A \space in \space
 generation \space t+1}\\
 \]</span></p>
 <p>As we may infer from the formulas, the maximum variability in the
-outcomes of the alleles’ sampling process will occur when <strong>the
-frequency <span class="math inline">\(p\)</span> of <span
+outcomes of the alleles’ binomial sampling process will occur when
+<strong>the frequency <span class="math inline">\(p\)</span> of <span
 class="math inline">\(A\)</span> equals the frequency <span
 class="math inline">\(1-p\)</span> of <span
 class="math inline">\(A\)</span> (<span
@@ -970,12 +1001,49 @@ df &lt;- as.data.frame(df,col.names=names(&quot;p&quot;,&quot;SE&quot;))
 # Plot of Allele Frequency p vs Standard Error
 ggplot(df,aes(x=p,y=SE))+geom_line()+xlab(&quot;Allele Frequency p&quot;)+ylab(&quot;SE&quot;)+ggtitle(&quot;Allele Frequency vs Standard Error&quot;)+theme(plot.title = element_text(hjust = 0.5))+geom_hline(yintercept = max(SE),color=&quot;red&quot;)</code></pre>
 <p><img src="figure/Genetic_Drift_Introduction.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-1">
+Past versions of unnamed-chunk-1-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/560a9f1c63551ccc061cce6abf4a6af3d0d21de8/docs/figure/Genetic_Drift_Introduction.Rmd/unnamed-chunk-1-1.png" target="_blank">560a9f1</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-16
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>#The horizontal red line determines the maximum value of SE.</code></pre>
 <p>The above plot confirms what we just discussed. The maximum
 variability of allele frequency changes happens when both alleles are
 very close in frequency[1].</p>
-<p>Another feature affecting the variability of sampling errors in
-genetic drift is the <strong>population size</strong>. As population
+<p>Another feature affecting the variability of binomial sampling errors
+in genetic drift is the <strong>population size</strong>. As population
 size increases, the variability of allele frequencies becomes less and
 less, constraining the spectrum of possible changes in allele
 frequencies moving forward in time and reducing the variance of the
@@ -1001,7 +1069,44 @@ df &lt;- as.data.frame(df,col.names=names(&quot;N&quot;,&quot;SE&quot;))
 # Plot of Allele Frequency p vs Standard Error
 ggplot(df,aes(x=N,y=SE))+geom_line()+xlab(&quot;Population Size (N)&quot;)+ylab(&quot;SE at p=0.5&quot;)+ggtitle(&quot;Population Size vs Standard Error at p=0.5&quot;)+theme(plot.title = element_text(hjust = 0.5))+geom_hline(yintercept = max(SE),color=&quot;red&quot;)</code></pre>
 <p><img src="figure/Genetic_Drift_Introduction.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>#The horizontal red line determines the maximum value of SE.</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/560a9f1c63551ccc061cce6abf4a6af3d0d21de8/docs/figure/Genetic_Drift_Introduction.Rmd/unnamed-chunk-2-1.png" target="_blank">560a9f1</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-16
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>#The horizontal red line determines the maximum value of SE at p=0.5.</code></pre>
 <p>Both features (population size and allele frequencies at time <span
 class="math inline">\(t\)</span>) will be of paramount importance to
 determine the outcomes of genetic drift in a given Wright-Fisher
@@ -1019,6 +1124,7 @@ class="section level3">
 model)</h3>
 <p>The diffusion process model of genetic drift will be explained in the
 following <a href="">vignette</a>.</p>
+<p>sessionInfo()</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">

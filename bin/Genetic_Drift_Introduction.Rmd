@@ -70,7 +70,7 @@ p_{t}= \mathbb{frequency \space allele \space A \space in \space generation \spa
 p_{t+1}= \mathbb{frequency \space allele \space A \space in \space generation \space t+1}\\
 $$
 
- As we may infer from the formulas, the maximum variability in the outcomes of the alleles' sampling process will occur when **the frequency $p$ of $A$ equals the frequency $1-p$ of $A$ ($p=1-p=0.5$)**[1]. This makes intuitive sense because as the frequency of one of the alleles reaches fixation , the sampling error that results in greatly increased frequencies of the low-frequency allele in one generation will be very highly unlikely [1]. On the other hand, when both alleles are equally frequent or almost equally frequent, sampling error is equally likely to increase or decrease allele frequency and its outcomes could vary more widely along the spectrum of possible allele frequencies.  
+ As we may infer from the formulas, the maximum variability in the outcomes of the alleles' binomial sampling process will occur when **the frequency $p$ of $A$ equals the frequency $1-p$ of $A$ ($p=1-p=0.5$)**[1]. This makes intuitive sense because as the frequency of one of the alleles reaches fixation , the sampling error that results in greatly increased frequencies of the low-frequency allele in one generation will be very highly unlikely [1]. On the other hand, when both alleles are equally frequent or almost equally frequent, sampling error is equally likely to increase or decrease allele frequency and its outcomes could vary more widely along the spectrum of possible allele frequencies.  
   
   
 The following code will demonstrate how the variability of the outcomes of the sampling process depends,in part, to : 
@@ -106,7 +106,7 @@ ggplot(df,aes(x=p,y=SE))+geom_line()+xlab("Allele Frequency p")+ylab("SE")+ggtit
 
 The above plot confirms what we just discussed. The maximum variability of allele frequency changes happens when both alleles are very close in frequency[1].  
 
-Another feature affecting the variability of sampling errors in genetic drift is the **population size**. As population size increases, the variability of allele frequencies becomes less and less, constraining the spectrum of possible changes in allele frequencies moving forward in time and reducing the variance of the sampling error process.  
+Another feature affecting the variability of binomial sampling errors in genetic drift is the **population size**. As population size increases, the variability of allele frequencies becomes less and less, constraining the spectrum of possible changes in allele frequencies moving forward in time and reducing the variance of the sampling error process.  
 
 The following code will illustrate this:  
 
@@ -132,7 +132,7 @@ df <- as.data.frame(df,col.names=names("N","SE"))
 # Plot of Allele Frequency p vs Standard Error
 ggplot(df,aes(x=N,y=SE))+geom_line()+xlab("Population Size (N)")+ylab("SE at p=0.5")+ggtitle("Population Size vs Standard Error at p=0.5")+theme(plot.title = element_text(hjust = 0.5))+geom_hline(yintercept = max(SE),color="red")
 
-#The horizontal red line determines the maximum value of SE.
+#The horizontal red line determines the maximum value of SE at p=0.5.
 
 
 ```
@@ -152,8 +152,7 @@ The Markov chain model of genetic drift will be explained in the following [vign
 The diffusion process model of genetic drift will be explained in the following [vignette]().
 
 
-
-
+sessionInfo()
 
 
 
