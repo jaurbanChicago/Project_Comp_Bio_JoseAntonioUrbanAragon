@@ -366,7 +366,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -377,8 +377,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -391,9 +391,9 @@ aria-hidden="true"></span> </a>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -417,21 +417,18 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R
-Markdown file created these results, you’ll want to first commit it to
-the Git repo. If you’re still working on the analysis, you can ignore
-this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
@@ -522,15 +519,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree7472e3f4eae1bee1c7de56afcddcf79202135a35targetblank7472e3fa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreeb88f1ba3a1533895124a288713c748b0c18887abtargetblankb88f1baa">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/7472e3f4eae1bee1c7de56afcddcf79202135a35" target="_blank">7472e3f</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/b88f1ba3a1533895124a288713c748b0c18887ab" target="_blank">b88f1ba</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree7472e3f4eae1bee1c7de56afcddcf79202135a35targetblank7472e3fa"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreeb88f1ba3a1533895124a288713c748b0c18887abtargetblankb88f1baa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -540,7 +537,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/7472e3f4eae1bee1c7de56afcddcf79202135a35" target="_blank">7472e3f</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/b88f1ba3a1533895124a288713c748b0c18887ab" target="_blank">b88f1ba</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -557,13 +554,13 @@ were generated:
 Untracked files:
     Untracked:  .DS_Store
     Untracked:  .Rhistory
-    Untracked:  bin/diffusion_process.Rmd
 
 Unstaged changes:
     Deleted:    New Folder With Items/.DS_Store
     Deleted:    New Folder With Items/Genetic_Drift_Markov_Chain.Rmd
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
+    Modified:   bin/.DS_Store
     Deleted:    index.html
 
 </code></pre>
@@ -579,10 +576,57 @@ have uncommitted changes.
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with
-<code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>bin/Diffusion_Process.Rmd</code>) and HTML
+(<code>docs/diffusion_process.html</code>) files. If you’ve configured a
+remote Git repository (see <code>?wflow_git_remote</code>), click on the
+hyperlinks in the table below to view the files as they were in that
+past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/06472ac8b74c387e131c89f4d721052fd7c868e1/docs/diffusion_process.html" target="_blank">06472ac</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+Added diffusion_process rmd and html
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
@@ -913,16 +957,16 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.8.2     rstudioapi_0.13  knitr_1.37       magrittr_2.0.2  
- [5] workflowr_1.7.0  R6_2.5.1         rlang_1.0.2      fastmap_1.1.0   
- [9] fansi_1.0.2      stringr_1.4.0    tools_4.1.2      xfun_0.29       
-[13] utf8_1.2.2       cli_3.2.0        jquerylib_0.1.4  git2r_0.29.0    
-[17] htmltools_0.5.2  ellipsis_0.3.2   yaml_2.2.2       digest_0.6.29   
-[21] rprojroot_2.0.2  lifecycle_1.0.1  tibble_3.1.6     crayon_1.5.0    
-[25] later_1.3.0      vctrs_0.3.8      sass_0.4.0       promises_1.2.0.1
-[29] fs_1.5.2         glue_1.6.2       evaluate_0.14    rmarkdown_2.11  
-[33] stringi_1.7.6    pillar_1.7.0     compiler_4.1.2   bslib_0.3.1     
-[37] jsonlite_1.8.0   httpuv_1.6.5     pkgconfig_2.0.3 </code></pre>
+ [1] Rcpp_1.0.8.2     rstudioapi_0.13  whisker_0.4      knitr_1.37      
+ [5] magrittr_2.0.2   workflowr_1.7.0  R6_2.5.1         rlang_1.0.2     
+ [9] fastmap_1.1.0    fansi_1.0.2      stringr_1.4.0    tools_4.1.2     
+[13] xfun_0.29        utf8_1.2.2       cli_3.2.0        jquerylib_0.1.4 
+[17] git2r_0.29.0     htmltools_0.5.2  ellipsis_0.3.2   yaml_2.2.2      
+[21] digest_0.6.29    rprojroot_2.0.2  lifecycle_1.0.1  tibble_3.1.6    
+[25] crayon_1.5.0     later_1.3.0      vctrs_0.3.8      sass_0.4.0      
+[29] promises_1.2.0.1 fs_1.5.2         glue_1.6.2       evaluate_0.14   
+[33] rmarkdown_2.11   stringi_1.7.6    pillar_1.7.0     compiler_4.1.2  
+[37] bslib_0.3.1      jsonlite_1.8.0   httpuv_1.6.5     pkgconfig_2.0.3 </code></pre>
 </div>
 </div>
 
