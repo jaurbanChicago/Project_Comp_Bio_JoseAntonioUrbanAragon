@@ -366,7 +366,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -377,8 +377,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -391,9 +391,9 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -417,18 +417,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -519,15 +522,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreedecf7fd5cfbe0991883068834dc9cadce1a7503ctargetblankdecf7fda">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreea232a334a249e4b5be7a32121f6933b2510cc70atargetblanka232a33a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/decf7fd5cfbe0991883068834dc9cadce1a7503c" target="_blank">decf7fd</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/a232a334a249e4b5be7a32121f6933b2510cc70a" target="_blank">a232a33</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreedecf7fd5cfbe0991883068834dc9cadce1a7503ctargetblankdecf7fda"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreea232a334a249e4b5be7a32121f6933b2510cc70atargetblanka232a33a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -537,7 +540,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/decf7fd5cfbe0991883068834dc9cadce1a7503c" target="_blank">decf7fd</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/a232a334a249e4b5be7a32121f6933b2510cc70a" target="_blank">a232a33</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -554,13 +557,13 @@ were generated:
 Untracked files:
     Untracked:  .DS_Store
     Untracked:  .Rhistory
-    Untracked:  bin/figure/Genetic_Drift_Markov.Rmd/
 
 Unstaged changes:
     Deleted:    New Folder With Items/.DS_Store
     Deleted:    New Folder With Items/Genetic_Drift_Markov_Chain.Rmd
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
+    Modified:   bin/Genetic_Drift_Markov.Rmd
     Deleted:    index.html
 
 </code></pre>
@@ -607,6 +610,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/af0fd73dae829ecb4fd82fd2da942c2863737c59/bin/Genetic_Drift_Markov.Rmd" target="_blank">af0fd73</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+<td>
+markov html
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/883962fbc60b397adbfde841d8136a554f07a6be/docs/Genetic_Drift_Markov.html" target="_blank">883962f</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+<td>
+Updated markov html
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -906,7 +943,7 @@ class="section level1">
 <p>We will use some simple code to simulate and model random genetic
 drift as a simple discrete Markov chain.</p>
 <pre class="r"><code># We are going to give some examples of random genetic drift trajectories using the transition probability (Pij). 
-#We are going to use the CRAN R package learnPopGen created by Liam J. Revell [6]
+#We are going to use the CRAN R package learnPopGen created by Liam J. Revell [5]
 
 library(learnPopGen)
 
@@ -914,20 +951,242 @@ library(learnPopGen)
 
 genetic.drift(p0=0.01,Ne=50,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
 <p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-1">
+Past versions of unnamed-chunk-1-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/dcdda13025f5bc6fad0606f0b1eafdb20e89c99f/docs/figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-1.png" target="_blank">dcdda13</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>genetic.drift(p0=0.01,Ne=500,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
 <p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-2">
+Past versions of unnamed-chunk-1-2.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/dcdda13025f5bc6fad0606f0b1eafdb20e89c99f/docs/figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-2.png" target="_blank">dcdda13</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code># Initial frequency p=0.5,N=50,500 and 50 population replicates
 
 genetic.drift(p0=0.5,Ne=50,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
 <p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-3">
+Past versions of unnamed-chunk-1-3.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/dcdda13025f5bc6fad0606f0b1eafdb20e89c99f/docs/figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-3.png" target="_blank">dcdda13</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>genetic.drift(p0=0.5,Ne=500,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
 <p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-4">
+Past versions of unnamed-chunk-1-4.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/dcdda13025f5bc6fad0606f0b1eafdb20e89c99f/docs/figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-4.png" target="_blank">dcdda13</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code># Initial frequency p=0.8,N=50,500 and 50 population replicates
 
 genetic.drift(p0=0.8,Ne=50,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
 <p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-5">
+Past versions of unnamed-chunk-1-5.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/dcdda13025f5bc6fad0606f0b1eafdb20e89c99f/docs/figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-5.png" target="_blank">dcdda13</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>genetic.drift(p0=0.8,Ne=500,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
 <p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-6">
+Past versions of unnamed-chunk-1-6.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/dcdda13025f5bc6fad0606f0b1eafdb20e89c99f/docs/figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-6.png" target="_blank">dcdda13</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>After taking a look at these simulations, we can observe that the
 size of <span class="math inline">\(N\)</span> indeed affects the
 variability of the outcome of the random sampling in the Markov chain.
@@ -938,6 +1197,28 @@ in each state <span class="math inline">\(t\)</span> affects the
 variability of the trajectories and this becomes even more apparent when
 the allele <span class="math inline">\(A\)</span> is either close to
 fixation or loss in each replicate.</p>
+</div>
+<div
+id="intractability-of-genetic-drift-as-a-markov-chain-in-a-wright-fisher-model"
+class="section level1">
+<h1>Intractability of Genetic Drift as a Markov chain in a Wright-Fisher
+Model</h1>
+<p>One of the caveats of modeling genetic drift as a Markov chain in a
+Wright-Fisher population is the fact that it becomes mathematically
+intractable. This means that it is very difficult to obtain simple
+analytical results on the distributions of allele frequencies after
+<span class="math inline">\(t\)</span> generations of genetic drift [6].
+We can iterate over and over the Markov chain transition probabilities
+and we would never derive analytical formulas to describe the allele
+frequencies distributions. <a
+href="https://jaurbanchicago.github.io/docs/diffusion_process.html">Diffusion
+theory</a> has been used to approximate certain features of the
+distribution (<strong>it´s still not easy and will probably require some
+numerical techniques!!!</strong>) and other interesting results
+(fixation probabilities,equilibrium allele frequency spectrum, etc) [6].
+You can find more about diffusion approximations of genetic drift in the
+following <a
+href="https://jaurbanchicago.github.io/docs/diffusion_approx.html">vignette</a>.</p>
 </div>
 <div id="references" class="section level1">
 <h1>References</h1>
@@ -950,8 +1231,12 @@ introduction (Vol. 1). New York: Springer, 86-91.<br />
 </li>
 <li>Hartl, D. L. (2020).<em>A primer of population genetics and
 genomics</em>. Oxford University Press,147-173.</li>
-<li>Novembre,J. “HGEN48600: Discrete Markov Chains”,February 2022,
-University of Chicago, Chicago, IL.</li>
+<li>Novembre,J. “Lecture: Discrete Markov Chains”,February 2022,
+University of Chicago, Chicago, IL. 5.Revell, L. J. (2019). learnPopGen:
+An R package for population genetic simulation and numerical analysis.
+Ecology and Evolution, 9(14), 7896-7902.</li>
+<li>Berg,J.J. “Lecture:Forward Models 1”,February 2022, University of
+Chicago, Chicago, IL.</li>
 </ol>
 <br>
 <p>

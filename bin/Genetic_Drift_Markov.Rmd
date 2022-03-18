@@ -77,7 +77,7 @@ We will use some simple code to simulate and model random genetic drift as a sim
 
 ```{r, message=FALSE}
 # We are going to give some examples of random genetic drift trajectories using the transition probability (Pij). 
-#We are going to use the CRAN R package learnPopGen created by Liam J. Revell [6]
+#We are going to use the CRAN R package learnPopGen created by Liam J. Revell [5]
 
 library(learnPopGen)
 
@@ -108,13 +108,20 @@ genetic.drift(p0=0.8,Ne=500,nrep=50, time=100, show = "p",pause = 0.1)
 After taking a look at these simulations, we can observe that the size of $N$ indeed affects the variability of the outcome of the random sampling in the Markov chain. We can also see that once $A$ reaches fixation or gets lost in one of the replicates, it can never get out of that particular **absorbing state**. Finally, the frequency in each state $t$ affects the variability of the trajectories and this becomes even more apparent when the allele $A$ is either close to fixation or loss in each replicate.
 
 
+# Intractability of Genetic Drift as a Markov chain in a Wright-Fisher Model
+
+
+One of the caveats of modeling genetic drift as a Markov chain in a Wright-Fisher population is the fact that it becomes mathematically intractable. This means that it is very difficult to obtain simple analytical results on the distributions of allele frequencies after $t$ generations of genetic drift [6]. We can iterate over and over the Markov chain transition probabilities and we would never derive analytical formulas to describe the allele frequencies distributions. [Diffusion theory](https://jaurbanchicago.github.io/docs/diffusion_process.html) has been used to approximate certain features of the distribution (**it´s still not easy and will probably require some numerical techniques!!!**) and other interesting results (fixation probabilities,equilibrium allele frequency spectrum, etc) [6]. You can find more about diffusion approximations of genetic drift in the following [vignette](https://jaurbanchicago.github.io/docs/diffusion_approx.html).
+
 
 # References
 
 1. Hamilton, M. B. (2008). *Population genetics*. John Wiley & Sons, 53-73.  
 2. Ewens, W. J. (2004). Mathematical population genetics: theoretical introduction (Vol. 1). New York: Springer, 86-91.  
 3. Hartl, D. L. (2020).*A primer of population genetics and genomics*. Oxford University Press,147-173.
-4. Novembre,J. "```: Discrete Markov Chains",February 2022, University of Chicago, Chicago, IL.
+4. Novembre,J. "Lecture: Discrete Markov Chains",February 2022, University of Chicago, Chicago, IL.
+5.Revell, L. J. (2019). learnPopGen: An R package for population genetic simulation and numerical analysis. Ecology and Evolution, 9(14), 7896-7902.
+6. Berg,J.J. "Lecture:Forward Models 1",February 2022, University of Chicago, Chicago, IL.
 
 
 
