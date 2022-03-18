@@ -366,7 +366,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -377,8 +377,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -387,13 +387,13 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-03-17
+<strong>Last updated:</strong> 2022-03-18
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -417,33 +417,120 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree50fe36b1994edb680fddde40bccb847ccd921e88targetblank50fe36ba">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed12345code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(12345)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed12345code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(12345)</code> was run prior to running the
+code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree0ca35002fb3087ee8e626070729fd20601d3c1f5targetblank0ca3500a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/50fe36b1994edb680fddde40bccb847ccd921e88" target="_blank">50fe36b</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/0ca35002fb3087ee8e626070729fd20601d3c1f5" target="_blank">0ca3500</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree50fe36b1994edb680fddde40bccb847ccd921e88targetblank50fe36ba"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree0ca35002fb3087ee8e626070729fd20601d3c1f5targetblank0ca3500a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -453,7 +540,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/50fe36b1994edb680fddde40bccb847ccd921e88" target="_blank">50fe36b</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/0ca35002fb3087ee8e626070729fd20601d3c1f5" target="_blank">0ca3500</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -470,12 +557,14 @@ were generated:
 Untracked files:
     Untracked:  .DS_Store
     Untracked:  .Rhistory
+    Untracked:  bin/figure/Genetic_Drift_Markov.Rmd/
 
 Unstaged changes:
     Deleted:    New Folder With Items/.DS_Store
     Deleted:    New Folder With Items/Genetic_Drift_Markov_Chain.Rmd
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
+    Modified:   bin/Genetic_Drift_Markov.Rmd
     Deleted:    index.html
 
 </code></pre>
@@ -522,6 +611,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/af0f01656774ff3715a103cd0abf5d36d1e09251/docs/Genetic_Drift_Markov.html" target="_blank">af0f016</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+Added Markov html
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -674,19 +780,32 @@ p_{M0} &amp; p_{M1} &amp; ... &amp; p_{MM}
 \end{pmatrix} \\
 \mathbb{This \space is \space an \space stochastic \space matrix, so
 \space all \space rows \space must \space sum \space to \space 1}
-\]</span></p>
+\]</span> The states of a discrete Markov chain are classified into the
+following categories [2,3,4]:</p>
+<ul>
+<li><strong>Recurrent</strong>:State <span
+class="math inline">\(E_i\)</span> can reenter <span
+class="math inline">\(E_i\)</span> often infinitely when the chain
+starts at this particular <span class="math inline">\(E_i\)</span>.,
+i.e. <span class="math inline">\(f_{i}=1\)</span>.</li>
+<li><strong>Transient</strong>: State <span
+class="math inline">\(E_i\)</span> is transient if, starting at state
+<span class="math inline">\(E_i\)</span>, the number of time periods
+that the process will be in <span class="math inline">\(E_i\)</span> has
+a geometric distribution with mean <span
+class="math inline">\(\frac{1}{1-f_i}\)</span>.<br />
+</li>
+<li><strong>Absorbing</strong>: An state <span
+class="math inline">\(E_i\)</span> is absorbinf if the probability of
+ever visiting any other state is zero.</li>
+</ul>
 <p>Next, we are going to classify the chains in two different
 classes:</p>
 <ul>
 <li><strong>Irreducible</strong>: All states can communicate with one
 another[3].</li>
 <li><strong>Ergodic</strong>: Irreducible, recurrent, and aperiodic.
-Recurrent means that every state <span
-class="math inline">\(E_i\)</span> can reenter <span
-class="math inline">\(E_i\)</span> often infinitely when the chain
-starts at this particular <span class="math inline">\(E_i\)</span>.,
-i.e. <span class="math inline">\(f_{i}=1\)</span>. Aperiodic means all
-of the Markov chain states are aperiodic [3].</li>
+Aperiodic means all of the Markov chain states are aperiodic [3].</li>
 </ul>
 <p>For the remainder of this vignette, it is important to denote that we
 will be working with Markov chains that have no periodicities in them,
@@ -716,7 +835,144 @@ class="math inline">\(\pi\)</span>).</p>
 </div>
 <div id="markov-chains-in-genetic-drift" class="section level1">
 <h1>Markov Chains in Genetic Drift</h1>
-<p>A <strong>discrete Markov chain</strong> can be quite helpful</p>
+<p>A <strong>discrete Markov chain</strong> can be quite helpful to
+describe genetic drift in an ensemble of numerous identical and
+independent populations of a Wright-Fisher model [1]. A Markov chain
+model will help us understand how drift modifies, on average, the
+alleles frequencies of a biallelic locus in various population
+replicates through time. The <strong>transition probability</strong> for
+the Markov chain describing allele frequencies changes in a specific
+population (from an ensemble of replicate populations) is [3]:</p>
+<p><span class="math display">\[
+P_{ij}=P(p_{t+1}=\frac{j}{2N}|p_t=\frac{i}{2N})={2N \choose
+j}(\frac{i}{2N})^j(1-\frac{i}{2N})^{2N-j} \\
+\mathbb{E}[p_{t+1}=\frac{j}{2N}|p_t=\frac{i}{2N}]=p_t\\
+Var(p_{t+1}=\frac{j}{2N}|p_t=\frac{i}{2N})=\frac{p_t(1-p_t)}{2N}
+\]</span> This transition probability equation describes the probability
+that a given Wright-Fisher population with a exactly <span
+class="math inline">\(i\)</span> copies of allele <span
+class="math inline">\(A\)</span> in generation t has exactly <span
+class="math inline">\(j\)</span> copies of <span
+class="math inline">\(A\)</span> in generation <span
+class="math inline">\(t+1\)</span>. This equation is another
+confirmation that the allele changes between discrete time units is
+<strong>Markovian</strong>, which means that the allele trajectories in
+<span class="math inline">\(t+1\)</span> will exclusively depend on the
+frequencies at <span class="math inline">\(t\)</span>[1-4]. A Markov
+chain describing genetic drift (no mutation and no selection) can have
+two <strong>absorbing states</strong>, which are when the allele
+frequency <span class="math inline">\(p_i=0\)</span> (loss) or <span
+class="math inline">\(p_i=1\)</span> (fixation) [5]. Besides these two
+absobing states, allele frequency can, in principle, change from any
+state to other states in a single generation. However, how big or small
+is the change between generations, will depend, in principle, in <span
+class="math inline">\(N\)</span> and the frequency itself (remember the
+binomial sampling from the introductory <a
+href="https://jaurbanchicago.github.io/docs/Genetic_Drift_Intro.html">vignette</a>).</p>
+</div>
+<div id="code-simulations-of-genetic-drifts-using-markov-chains"
+class="section level1">
+<h1>Code Simulations of Genetic Drifts using Markov Chains</h1>
+<p>We will use some simple code to simulate and model random genetic
+drift as a simple discrete Markov chain.</p>
+<pre class="r"><code># We are going to give some examples of random genetic drift trajectories using the transition probability (Pij). 
+#We are going to use the CRAN R package learnPopGen created by Liam J. Revell [6]
+
+library(learnPopGen)
+
+# Initial frequency p=0.01,N=50,500 and 50 population replicates
+
+genetic.drift(p0=0.01,Ne=50,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
+<p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>genetic.drift(p0=0.01,Ne=500,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
+<p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Initial frequency p=0.5,N=50,500 and 50 population replicates
+
+genetic.drift(p0=0.5,Ne=50,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
+<p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>genetic.drift(p0=0.5,Ne=500,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
+<p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Initial frequency p=0.8,N=50,500 and 50 population replicates
+
+genetic.drift(p0=0.8,Ne=50,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
+<p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>genetic.drift(p0=0.8,Ne=500,nrep=50, time=100, show = &quot;p&quot;,pause = 0.1)</code></pre>
+<p><img src="figure/Genetic_Drift_Markov.Rmd/unnamed-chunk-1-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>After taking a look at these simulations, we can observe that the
+size of <span class="math inline">\(N\)</span> indeed affects the
+variability of the outcome of the random sampling in the Markov chain.
+We can also see that once <span class="math inline">\(A\)</span> reaches
+fixation or gets lost in one of the replicates, it can never get out of
+that particular <strong>absorbing state</strong>. Finally, the frequency
+in each state <span class="math inline">\(t\)</span> affects the
+variability of the trajectories and this becomes even more apparent when
+the allele <span class="math inline">\(A\)</span> is either close to
+fixation or loss in each replicate.</p>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<ol style="list-style-type: decimal">
+<li>Hamilton, M. B. (2008). <em>Population genetics</em>. John Wiley
+&amp; Sons, 53-73.<br />
+</li>
+<li>Ewens, W. J. (2004). Mathematical population genetics: theoretical
+introduction (Vol. 1). New York: Springer, 86-91.<br />
+</li>
+<li>Hartl, D. L. (2020).<em>A primer of population genetics and
+genomics</em>. Oxford University Press,147-173.</li>
+<li>Novembre,J. “HGEN48600: Discrete Markov Chains”,February 2022,
+University of Chicago, Chicago, IL.</li>
+</ol>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.1.2 (2021-11-01)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Catalina 10.15.7
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] learnPopGen_1.0.4
+
+loaded via a namespace (and not attached):
+ [1] phangorn_2.8.1          gtools_3.9.2            xfun_0.29              
+ [4] bslib_0.3.1             lattice_0.20-45         phytools_1.0-1         
+ [7] vctrs_0.3.8             expm_0.999-6            htmltools_0.5.2        
+[10] yaml_2.2.2              utf8_1.2.2              rlang_1.0.2            
+[13] jquerylib_0.1.4         later_1.3.0             pillar_1.7.0           
+[16] glue_1.6.2              lifecycle_1.0.1         stringr_1.4.0          
+[19] combinat_0.0-8          workflowr_1.7.0         codetools_0.2-18       
+[22] coda_0.19-4             evaluate_0.14           knitr_1.37             
+[25] fastmap_1.1.0           httpuv_1.6.5            parallel_4.1.2         
+[28] fansi_1.0.2             highr_0.9               Rcpp_1.0.8.2           
+[31] promises_1.2.0.1        plotrix_3.8-2           clusterGeneration_1.3.7
+[34] scatterplot3d_0.3-41    jsonlite_1.8.0          tmvnsim_1.0-2          
+[37] fs_1.5.2                fastmatch_1.1-3         mnormt_2.0.2           
+[40] digest_0.6.29           stringi_1.7.6           numDeriv_2016.8-1.1    
+[43] rprojroot_2.0.2         grid_4.1.2              quadprog_1.5-8         
+[46] cli_3.2.0               tools_4.1.2             magrittr_2.0.2         
+[49] sass_0.4.0              maps_3.4.0              tibble_3.1.6           
+[52] crayon_1.5.0            ape_5.6-2               whisker_0.4            
+[55] pkgconfig_2.0.3         ellipsis_0.3.2          MASS_7.3-55            
+[58] Matrix_1.4-0            rmarkdown_2.11          rstudioapi_0.13        
+[61] R6_2.5.1                igraph_1.2.11           nlme_3.1-155           
+[64] git2r_0.29.0            compiler_4.1.2         </code></pre>
+</div>
 </div>
 
 <hr>
