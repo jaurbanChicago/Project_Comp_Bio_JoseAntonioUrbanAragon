@@ -1,6 +1,6 @@
 ---
 title: "Diffusion process"
-author: "Ethan Zhong, Toño Urbán"
+author: "Ethan Zhong, Jose Antonio Urban Aragon"
 date: "3/15/2022"
 output: html_document
 ---
