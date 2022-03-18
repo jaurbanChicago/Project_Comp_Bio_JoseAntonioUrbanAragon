@@ -34,12 +34,17 @@ p_{M0} & p_{M1} & ... & p_{MM}
 \end{pmatrix} \\
 \mathbb{This \space is \space an \space stochastic \space matrix, so \space all \space rows \space must \space sum \space to \space 1}
 $$
+The states of a discrete Markov chain are classified into the following categories [2,3,4]:  
+
+  * **Recurrent**:State $E_i$ can reenter $E_i$ often infinitely when the chain starts at this particular $E_i$., i.e. $f_{i}=1$. 
+  * **Transient**: State $E_i$ is transient if, starting at state $E_i$, the number of time periods that the process will be in $E_i$ has a geometric distribution with mean $\frac{1}{1-f_i}$.  
+  * **Absorbing**: An state $E_i$ is absorbinf if the probability of ever visiting any other state is zero.  
 
 
 Next, we are going to classify the chains in two different classes:  
 
   * **Irreducible**: All states can communicate with one another[3].
-  * **Ergodic**: Irreducible, recurrent, and aperiodic. Recurrent means that every state $E_i$ can reenter $E_i$ often infinitely when the chain starts at this particular $E_i$., i.e. $f_{i}=1$. Aperiodic means all of the Markov chain states are aperiodic [3].  
+  * **Ergodic**: Irreducible, recurrent, and aperiodic. Aperiodic means all of the Markov chain states are aperiodic [3].  
   
 
 For the remainder of this vignette, it is important to denote that we will be working with Markov chains that have no periodicities in them, which hardly arise in any genetical applications [2]. Finally, we need to define the concept of **stationary distribution** of a Markov chain. A stationary distribution may be defined with the following mathematical terms [3]:  
@@ -55,7 +60,62 @@ For ergodic chains, the limiting distribution is also the stationary distributio
 
 # Markov Chains in Genetic Drift
 
-A **discrete Markov chain** can be quite helpful 
+A **discrete Markov chain** can be quite helpful to describe genetic drift in an ensemble of numerous identical and independent populations of a Wright-Fisher model [1]. A Markov chain model will help us understand how drift modifies, on average, the alleles frequencies of a biallelic locus in various population replicates through time. The **transition probability** for the Markov chain describing allele frequencies changes in a specific population (from an ensemble of replicate populations) is [3]:  
+
+$$
+P_{ij}=P(p_{t+1}=\frac{j}{2N}|p_t=\frac{i}{2N})={2N \choose j}(\frac{i}{2N})^j(1-\frac{i}{2N})^{2N-j} \\
+\mathbb{E}[p_{t+1}=\frac{j}{2N}|p_t=\frac{i}{2N}]=p_t\\
+Var(p_{t+1}=\frac{j}{2N}|p_t=\frac{i}{2N})=\frac{p_t(1-p_t)}{2N}
+$$
+This transition probability equation describes the probability that a given Wright-Fisher population with a exactly $i$ copies of allele $A$ in generation t has exactly $j$ copies of $A$ in generation $t+1$. This equation is another confirmation that the allele changes between discrete time units is **Markovian**, which means that the allele trajectories in $t+1$ will exclusively depend on the frequencies at $t$[1-4]. A Markov chain describing genetic drift (no mutation and no selection) can have two **absorbing states**, which are when the allele frequency $p_i=0$ (loss) or $p_i=1$ (fixation) [5]. Besides these two absobing states, allele frequency can, in principle, change from any state to other states in a single generation. However, how big or small is the change between generations, will depend, in principle, in $N$ and the frequency itself (remember the binomial sampling from the introductory [vignette](https://jaurbanchicago.github.io/docs/Genetic_Drift_Intro.html)).  
+
+# Code Simulations of Genetic Drifts using Markov Chains  
+
+We will use some simple code to simulate and model random genetic drift as a simple discrete Markov chain.  
+
+
+
+```{r, message=FALSE}
+# We are going to give some examples of random genetic drift trajectories using the transition probability (Pij). 
+#We are going to use the CRAN R package learnPopGen created by Liam J. Revell [6]
+
+library(learnPopGen)
+
+# Initial frequency p=0.01,N=50,500 and 50 population replicates
+
+genetic.drift(p0=0.01,Ne=50,nrep=50, time=100, show = "p",pause = 0.1)
+genetic.drift(p0=0.01,Ne=500,nrep=50, time=100, show = "p",pause = 0.1)
+
+
+
+
+# Initial frequency p=0.5,N=50,500 and 50 population replicates
+
+genetic.drift(p0=0.5,Ne=50,nrep=50, time=100, show = "p",pause = 0.1)
+genetic.drift(p0=0.5,Ne=500,nrep=50, time=100, show = "p",pause = 0.1)
+
+
+# Initial frequency p=0.8,N=50,500 and 50 population replicates
+
+genetic.drift(p0=0.8,Ne=50,nrep=50, time=100, show = "p",pause = 0.1)
+genetic.drift(p0=0.8,Ne=500,nrep=50, time=100, show = "p",pause = 0.1)
+
+
+```
+
+
+
+After taking a look at these simulations, we can observe that the size of $N$ indeed affects the variability of the outcome of the random sampling in the Markov chain. We can also see that once $A$ reaches fixation or gets lost in one of the replicates, it can never get out of that particular **absorbing state**. Finally, the frequency in each state $t$ affects the variability of the trajectories and this becomes even more apparent when the allele $A$ is either close to fixation or loss in each replicate.
+
+
+
+# References
+
+1. Hamilton, M. B. (2008). *Population genetics*. John Wiley & Sons, 53-73.  
+2. Ewens, W. J. (2004). Mathematical population genetics: theoretical introduction (Vol. 1). New York: Springer, 86-91.  
+3. Hartl, D. L. (2020).*A primer of population genetics and genomics*. Oxford University Press,147-173.
+4. Novembre,J. "HGEN48600: Discrete Markov Chains",February 2022, University of Chicago, Chicago, IL.
+
 
 
 
