@@ -523,15 +523,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2targetblank6ad5355a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree0d8c343b4a9da2b48bf76780b3460ddd808a7d9etargetblank0d8c343a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2" target="_blank">6ad5355</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/0d8c343b4a9da2b48bf76780b3460ddd808a7d9e" target="_blank">0d8c343</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2targetblank6ad5355a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree0d8c343b4a9da2b48bf76780b3460ddd808a7d9etargetblank0d8c343a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -541,7 +541,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2" target="_blank">6ad5355</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/0d8c343b4a9da2b48bf76780b3460ddd808a7d9e" target="_blank">0d8c343</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -565,7 +565,6 @@ Unstaged changes:
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
     Modified:   bin/Genetic_Drift_Introduction.Rmd
-    Modified:   bin/Genetic_Drift_Markov.Rmd
     Deleted:    index.html
 
 </code></pre>
@@ -612,6 +611,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/0d8c343b4a9da2b48bf76780b3460ddd808a7d9e/bin/Genetic_Drift_Introduction.Rmd" target="_blank">0d8c343</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+Updates both rmd and html
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/0d8c343b4a9da2b48bf76780b3460ddd808a7d9e/docs/Genetic_Drift_Introduction.html" target="_blank">0d8c343</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+Updates both rmd and html
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1112,8 +1145,9 @@ frequent or almost equally frequent, sampling error is equally likely to
 increase or decrease allele frequency and its outcomes could vary more
 widely along the spectrum of possible allele frequencies.</p>
 <p>The following code will demonstrate how the variability of the
-outcomes of the sampling process depends,in part, to allele frequencies
-at time <span class="math inline">\(t\)</span>:</p>
+outcomes of the sampling process at time <span
+class="math inline">\(t+1\)</span> depends,in part, to allele
+frequencies at time <span class="math inline">\(t\)</span>:</p>
 <pre class="r"><code>library(tidyverse)
 # Vector of allele frequency for allele A
 p &lt;-  seq(0,1,by=0.01) # Frequency p of A allele

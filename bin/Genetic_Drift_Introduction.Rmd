@@ -73,7 +73,7 @@ $$
  As we may infer from the formulas, the maximum variability in the outcomes of the alleles' binomial sampling process will occur when **the frequency $p$ of $A$ equals the frequency $1-p$ of $A$ ($p=1-p=0.5$)**[1]. This makes intuitive sense because as the frequency of one of the alleles reaches fixation , the sampling error that results in greatly increased frequencies of the low-frequency allele in one generation will be very highly unlikely [1]. On the other hand, when both alleles are equally frequent or almost equally frequent, sampling error is equally likely to increase or decrease allele frequency and its outcomes could vary more widely along the spectrum of possible allele frequencies.  
   
   
-The following code will demonstrate how the variability of the outcomes of the sampling process depends,in part, to allele frequencies at time $t$: 
+The following code will demonstrate how the variability of the outcomes of the sampling process at time $t+1$ depends,in part, to allele frequencies at time $t$: 
 
 
 ```{r,message=FALSE}
