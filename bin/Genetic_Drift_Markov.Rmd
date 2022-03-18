@@ -17,13 +17,17 @@ Before getting into the specific details of the relationship between Markov chai
 Let´s consider a discrete random variable $X$, which at time points $0,1,2,3,...$, takes values $0,1,2,...,M$. Therefore, it is precise to say that each state $E_i$, $X$ takes the value $i$ [2]. This means that at each state $E_i$ at some time $t$, $X$ is in some state $E_i$. A variable is said to be **Markovian** if the probability of a certain outcome in the next time step $t+1$ depends only on the present state at time $t$ and is memoryless with regard to any previous time step $t-1,t-2,...$. Therefore, we can now define **a discrete Markov chain** as a sequence of discrete random variables in which the probability distribution of the different states at each time $t$ depends only on the state at time $t-1$ [1,2].
 
 
-Some important mathematical notation to describe a discrete Markov chain is [2,3]:  
+Here are some important notions on a discrete-time Markov chain (DTMC) [2,3]. A DTMC is said to be **Markovian** if:
 $$
 P(E_{n+1}|E_{n})=i,E_{n-1}=i_{n-1},...,E_1=i_1,E_0=i_0)=P(E_{n+1}=j|E_n=i)\\
-\mathbb{A \space discrete \space Markov \space is \space homogeneous \space if:}\\
+$$
+A DTMC is said to be **time homogeneous** if:
+$$
 P(E_{n+1}|E_{n})=P(E_i=j|E_{i-1}=i) \space \mathbb{for \space all} \space n, \mathbb{so} \space P(E_i=j|E_{i-1})=P_{ij}\\
 P_{ij} \gt 0;i,j \ge 0; \sum_{j=0}^{\infty}P_{ij}=1 \\
-\mathbb{A \space transition \space probability \space matrix \space can \space be \space assembled \space to \space represent \space the \space probabilities \space of \space} P_{ij} \space \\
+$$
+Finally, we can describe the randomness of transitioning between states using a **transition probability matrix**:
+$$
 P_{ij}= \begin{pmatrix}
 p_{00} & p_{01} & ... & p_{0M}\\
 p_{00} & p_{11} & ... & p_{1M} \\
@@ -32,8 +36,9 @@ p_{00} & p_{11} & ... & p_{1M} \\
 .\\
 p_{M0} & p_{M1} & ... & p_{MM}
 \end{pmatrix} \\
-\mathbb{This \space is \space an \space stochastic \space matrix, so \space all \space rows \space must \space sum \space to \space 1}
 $$
+Because the transition probability matrix is a stochastic matrix, all rows must sum to 1.\
+\
 The states of a discrete Markov chain are classified into the following categories [2,3,4]:  
 
   * **Recurrent**:State $E_i$ can reenter $E_i$ often infinitely when the chain starts at this particular $E_i$., i.e. $f_{i}=1$. 
@@ -50,10 +55,8 @@ Next, we are going to classify the chains in two different classes:
 For the remainder of this vignette, it is important to denote that we will be working with Markov chains that have no periodicities in them, which hardly arise in any genetical applications [2]. Finally, we need to define the concept of **stationary distribution** of a Markov chain. A stationary distribution may be defined with the following mathematical terms [3]:  
 
 $$
-\mathbb{Consider \space}P^t \space \mathbb{as \space t \space gets \space large}:\\
-\lim_{t\to\infty}(\pi^{(0)})^TP^t=\pi^T ; \space \mathbb{the \space \pi \space vector \space is \space the \space limiting \space distribution \space of \space the \space Markov \space chain}\\
-\mathbb{Stationarity \space property \space of \space \pi}:\\
-\pi^T=\pi^TP; \space \mathbb{because} \space \pi_i=\sum_k \pi_kP_{ki} 
+\text{Consider } P^t \text{ as } t \text{ gets large}:\lim_{t\to\infty}(\pi^{(0)})^TP^t=\pi^T\\
+\text{The } \pi \text{ vector is the limiting distribution of the Markov chain with stationary property: } \pi^T=\pi^TP \space \mathbb{because} \space \pi_i=\sum_k \pi_kP_{ki} 
 $$
 For ergodic chains, the limiting distribution is also the stationary distribution and there is only one unique stationary distribution (i.e., equilibrium distribution) [3]. To obtain the stationary distribution of the Markov chain, we can use matrix exponentiation (each row of the resulting matrix will have $\pi$ in each row), solve linear equations (solve for $\pi^T=\pi^TP$), and use eigendecomposition ($\pi$ is left eigenvector of $P$, so eigendecomposition can lead to $\pi$).
 

@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Ethan Zhong, Jose Antonio Urban Aragon" />
+<meta name="author" content="Ethan Zhong, Toño Urbán" />
 
 
 <title>Diffusion process</title>
@@ -357,7 +357,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Diffusion process</h1>
-<h4 class="author">Ethan Zhong, Jose Antonio Urban Aragon</h4>
+<h4 class="author">Ethan Zhong, Toño Urbán</h4>
 <h4 class="date">3/15/2022</h4>
 
 </div>
@@ -366,7 +366,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -377,8 +377,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -391,9 +391,9 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -417,18 +417,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -519,15 +522,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree742e5e63d0481f4d59459539a011273ff33a57c5targetblank742e5e6a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree571343e27b9118d61ef613355b755f6cb8ab2e03targetblank571343ea">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/742e5e63d0481f4d59459539a011273ff33a57c5" target="_blank">742e5e6</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/571343e27b9118d61ef613355b755f6cb8ab2e03" target="_blank">571343e</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree742e5e63d0481f4d59459539a011273ff33a57c5targetblank742e5e6a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree571343e27b9118d61ef613355b755f6cb8ab2e03targetblank571343ea"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -537,7 +540,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/742e5e63d0481f4d59459539a011273ff33a57c5" target="_blank">742e5e6</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/571343e27b9118d61ef613355b755f6cb8ab2e03" target="_blank">571343e</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -560,6 +563,10 @@ Unstaged changes:
     Deleted:    New Folder With Items/Genetic_Drift_Markov_Chain.Rmd
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
+    Modified:   bin/Genetic_Drift_Intro.Rmd
+    Modified:   bin/Genetic_Drift_Markov.Rmd
+    Modified:   bin/diffusion_approx.Rmd
+    Modified:   bin/diffusion_process.Rmd
     Deleted:    index.html
 
 </code></pre>
@@ -606,6 +613,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/a232a334a249e4b5be7a32121f6933b2510cc70a/docs/diffusion_process.html" target="_blank">a232a33</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+<td>
+Updated intro
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -783,8 +807,8 @@ Added diffusion_process rmd and html
 </div>
 </div>
 </div>
-<p>In this vignette, we will learn about an important type of random
-process called the <em>diffusion process</em>.</p>
+<p>In this vignette, we introduce an important type of random process
+called the <em>diffusion process</em>.</p>
 <div id="prerequisites" class="section level3">
 <h3>Prerequisites</h3>
 <ul>
@@ -953,7 +977,7 @@ class="math inline">\(x\)</span>, we get: <span class="math display">\[
 \begin{aligned}
 p(z,x&#39;,t) &amp;= p(x,x&#39;,t) +
 (z-x)\frac{d}{dx}p(x,x&#39;,t)+\frac{1}{2}(z-x)^2\frac{d^2}{dx^2}p(x,x&#39;,t)
-+ O(\Delta t^3)
++ O(\Delta t^2)
 \end{aligned}
 \]</span> Substituting back, we have: <span class="math display">\[
 \begin{aligned}
@@ -961,7 +985,7 @@ p(x,x&#39;,t+\Delta t) - p(x, x&#39;, t) &amp;= p(x,x&#39;,t)
 \int_{\mathbb{R}} p(x,z,\Delta t)dz \\ &amp;+
 \frac{d}{dx}p(x,x&#39;,t)\int_{\mathbb{R}}(z-x)p(x,z,\Delta t)dz \\
 &amp;+\frac{1}{2}\frac{d^2}{dx^2}p(x,x&#39;,t) \int_{\mathbb{R}} (z-x)^2
-p(x,z,\Delta t)dz \\ &amp;+ O(\Delta t^3) \\ &amp;- p(x,x&#39;,t)
+p(x,z,\Delta t)dz \\ &amp;+ O(\Delta t^2) \\ &amp;- p(x,x&#39;,t)
 \end{aligned}
 \]</span> Plugging in the definition of diffusion process and divide
 both sides of the equation by <span class="math inline">\(\Delta
@@ -1007,7 +1031,7 @@ class="math inline">\(h\)</span> and evaluate the following integral:
 \begin{aligned}
 \int_{\mathbb{R}}h(x)dx\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz
 &amp;= \int_{\mathbb{R}}h(x)\{\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta
-t)dz\}dx \hspace{10mm} (*) \\ &amp;=
+t)dz\}dx \hspace{10mm} (\star) \\ &amp;=
 \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz
 \end{aligned}
 \]</span> Now we can do Taylor expansion for <span
@@ -1030,7 +1054,7 @@ h&#39;&#39;(z) dz \\ &amp;=  \int_{\mathbb{R}} p(x_0,z,t) h (z) dz -
 \frac{d^2}{dz^2}\{p(x_0,z,t)\sigma^2(z)\}dz \\ &amp;= \int_{\mathbb{R}}
 h(x) [p(x_0,x,t) - \Delta t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} +
 \frac{1}{2} \Delta t \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}] dx
-\hspace{10mm} (**)
+\hspace{10mm} (\star\star)
 \end{aligned}
 \]</span> The calculations might seem a bit daunting at first glance.
 However, note that because <span class="math inline">\(h\)</span> and
@@ -1043,8 +1067,9 @@ h&#39;(x) f(x) dx\)</span> is just <span
 class="math inline">\(-\int_{\mathbb{R}} h(x) f&#39;(x) dx\)</span> in
 this case.<br />
 <br />
-Now, comparing <span class="math inline">\((*)\)</span> with <span
-class="math inline">\((**)\)</span> gives: <span class="math display">\[
+Now, comparing <span class="math inline">\((\star)\)</span> with <span
+class="math inline">\((\star\star)\)</span> gives: <span
+class="math display">\[
 \int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz = p(x_0,x,t) - \Delta
 t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2} \Delta t
 \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}

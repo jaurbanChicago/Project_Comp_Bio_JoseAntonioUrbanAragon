@@ -1,14 +1,15 @@
 ---
 title: "Diffusion process"
-author: "Ethan Zhong, Jose Antonio Urban Aragon"
+author: "Ethan Zhong, Toño Urbán"
 date: "3/15/2022"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-In this vignette, we will learn about an important type of random process called the *diffusion process*.
+In this vignette, we introduce an important type of random process called the *diffusion process*.
 
 ### Prerequisites
 
@@ -95,13 +96,13 @@ $$
 The first one corresponds to the forward equation and the second one corresponds to the backward equation. We derive the backward equation first. By Taylor expansion of $p(z,x',t)$ in $z$ about $x$, we get:
 $$
 \begin{aligned}
-p(z,x',t) &= p(x,x',t) + (z-x)\frac{d}{dx}p(x,x',t)+\frac{1}{2}(z-x)^2\frac{d^2}{dx^2}p(x,x',t) + O(\Delta t^3)
+p(z,x',t) &= p(x,x',t) + (z-x)\frac{d}{dx}p(x,x',t)+\frac{1}{2}(z-x)^2\frac{d^2}{dx^2}p(x,x',t) + O(\Delta t^2)
 \end{aligned}
 $$
 Substituting back, we have:
 $$
 \begin{aligned}
-p(x,x',t+\Delta t) - p(x, x', t) &= p(x,x',t) \int_{\mathbb{R}} p(x,z,\Delta t)dz \\ &+ \frac{d}{dx}p(x,x',t)\int_{\mathbb{R}}(z-x)p(x,z,\Delta t)dz \\ &+\frac{1}{2}\frac{d^2}{dx^2}p(x,x',t) \int_{\mathbb{R}} (z-x)^2 p(x,z,\Delta t)dz \\ &+ O(\Delta t^3) \\ &- p(x,x',t)
+p(x,x',t+\Delta t) - p(x, x', t) &= p(x,x',t) \int_{\mathbb{R}} p(x,z,\Delta t)dz \\ &+ \frac{d}{dx}p(x,x',t)\int_{\mathbb{R}}(z-x)p(x,z,\Delta t)dz \\ &+\frac{1}{2}\frac{d^2}{dx^2}p(x,x',t) \int_{\mathbb{R}} (z-x)^2 p(x,z,\Delta t)dz \\ &+ O(\Delta t^2) \\ &- p(x,x',t)
 \end{aligned}
 $$
 Plugging in the definition of diffusion process and divide both sides of the equation by $\Delta t$. Take the limit as $\Delta t \rightarrow 0$, we obtain the **backward equation**:
@@ -121,18 +122,18 @@ Instead of performing Taylor expansion, we adopt a different strategy. The intui
 We pick some smooth, compactly supported test function $h$ and evaluate the following integral:
 $$
 \begin{aligned}
-\int_{\mathbb{R}}h(x)dx\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz &= \int_{\mathbb{R}}h(x)\{\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz\}dx \hspace{10mm} (*) \\ &= \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz
+\int_{\mathbb{R}}h(x)dx\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz &= \int_{\mathbb{R}}h(x)\{\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz\}dx \hspace{10mm} (\star) \\ &= \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz
 \end{aligned}
 $$
 Now we can do Taylor expansion for $h(x)$ about $z$. Leveraging the definition of diffusion process and dropping the higher-order terms, we have for small $\Delta t$:
 $$
 \begin{aligned}
-\int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz &= \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}} [h(z) + (x-z) \frac{d}{dz}h(z)+\frac{1}{2} (x-z)^2 \frac{d^2}{dz^2}h(z) + O(\Delta t^3)] p(z,x,\Delta t)dxdz \\ &= \int_{\mathbb{R}}p(x_0,z,t) [h(z) + \mu(z) \frac{d}{dz}h(z)\Delta t + \frac{1}{2} \sigma^2(z) \frac{d^2}{dz^2}h(z) \Delta t] dz \\ &= \int_{\mathbb{R}} p(x_0,z,t) h (z) dz + \Delta t \int_{\mathbb{R}} p(x_0,z,t) \mu(z) h'(z) dz + \Delta t \int_{\mathbb{R}} p(x_0,z,t) \frac{1}{2} \sigma^2(z) h''(z) dz \\ &=  \int_{\mathbb{R}} p(x_0,z,t) h (z) dz - \Delta t \int_{\mathbb{R}} h(z) \frac{d}{dz}\{p(x_0,z,t) \mu(z)\} dz + \Delta t \int_{\mathbb{R}} \frac{1}{2} h(z) \frac{d^2}{dz^2}\{p(x_0,z,t)\sigma^2(z)\}dz \\ &= \int_{\mathbb{R}} h(x) [p(x_0,x,t) - \Delta t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2} \Delta t \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}] dx \hspace{10mm} (**)
+\int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz &= \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}} [h(z) + (x-z) \frac{d}{dz}h(z)+\frac{1}{2} (x-z)^2 \frac{d^2}{dz^2}h(z) + O(\Delta t^3)] p(z,x,\Delta t)dxdz \\ &= \int_{\mathbb{R}}p(x_0,z,t) [h(z) + \mu(z) \frac{d}{dz}h(z)\Delta t + \frac{1}{2} \sigma^2(z) \frac{d^2}{dz^2}h(z) \Delta t] dz \\ &= \int_{\mathbb{R}} p(x_0,z,t) h (z) dz + \Delta t \int_{\mathbb{R}} p(x_0,z,t) \mu(z) h'(z) dz + \Delta t \int_{\mathbb{R}} p(x_0,z,t) \frac{1}{2} \sigma^2(z) h''(z) dz \\ &=  \int_{\mathbb{R}} p(x_0,z,t) h (z) dz - \Delta t \int_{\mathbb{R}} h(z) \frac{d}{dz}\{p(x_0,z,t) \mu(z)\} dz + \Delta t \int_{\mathbb{R}} \frac{1}{2} h(z) \frac{d^2}{dz^2}\{p(x_0,z,t)\sigma^2(z)\}dz \\ &= \int_{\mathbb{R}} h(x) [p(x_0,x,t) - \Delta t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2} \Delta t \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}] dx \hspace{10mm} (\star\star)
 \end{aligned}
 $$
 The calculations might seem a bit daunting at first glance. However, note that because $h$ and $h'$ both have compact support, they vanish at $-\infty$ and $\infty$. Using this fact, we can compute the integrals easily. Specifically, the fourth equality follows from integration by part, and $\int_{\mathbb{R}} h'(x) f(x) dx$ is just $-\int_{\mathbb{R}} h(x) f'(x) dx$ in this case.\
 \
-Now, comparing $(*)$ with $(**)$ gives:
+Now, comparing $(\star)$ with $(\star\star)$ gives:
 $$
 \int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz = p(x_0,x,t) - \Delta t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2} \Delta t \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}
 $$
