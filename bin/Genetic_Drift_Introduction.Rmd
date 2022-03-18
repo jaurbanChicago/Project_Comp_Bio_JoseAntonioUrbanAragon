@@ -154,7 +154,6 @@ The diffusion process model of genetic drift will be explained in the following 
 * [Introduction to Difussion Processes](https://jaurbanchicago.github.io/docs/diffusion_process.html)  
 * [Difussion Processes and Genetic Drift]()  
 
-
 # References
 
 1. Hamilton, M. B. (2008). *Population genetics*. John Wiley & Sons, 53-73.
