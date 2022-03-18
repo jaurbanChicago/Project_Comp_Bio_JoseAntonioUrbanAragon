@@ -114,7 +114,7 @@ After taking a look at these simulations, we can observe that the size of $N$ in
 1. Hamilton, M. B. (2008). *Population genetics*. John Wiley & Sons, 53-73.  
 2. Ewens, W. J. (2004). Mathematical population genetics: theoretical introduction (Vol. 1). New York: Springer, 86-91.  
 3. Hartl, D. L. (2020).*A primer of population genetics and genomics*. Oxford University Press,147-173.
-4. Novembre,J. "HGEN48600: Discrete Markov Chains",February 2022, University of Chicago, Chicago, IL.
+4. Novembre,J. "```: Discrete Markov Chains",February 2022, University of Chicago, Chicago, IL.
 
 
 
