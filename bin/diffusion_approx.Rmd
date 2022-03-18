@@ -1,8 +1,7 @@
 ---
 title: "Diffusion approximation of genetic drift"
-author: "Ethan Zhong, Toño Urbán"
+author: "Ethan Zhong, Jose Antonio Urban Aragon"
 date: "3/17/2022"
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -20,8 +19,8 @@ While the previous vignette provides a mathematically satisfactory (without invo
 
 The term **diffusion** refers to the general phenomenon where particles move from a high concentration region to a lower concentration region. In genetic drift, we use diffusion to describe the “flattening” effect of random drift on the allele state distributions. In 1956, Peter Buri used a [beautiful experiment](https://www.jstor.org/stable/2406998?seq=1) to demonstrate this effect. Briefly, Buri began the experiment with 107 populations of D. melanogaster (fruit fly). In each population, the frequency of a target allele called $\text{bw}^{75}$ is exactly 0.5. Buri tracked the allele frequency changes over 19 generations by inferring the genotype of each fly from its eye color. The changes in allele frequency distribution vividly describe the effect of genetic drift on many populations.
 
-```{r, echo=FALSE, out.width = '50%'}
-knitr::include_graphics("/Users/EthanZhong/Desktop/phd/coursework/Winter2022/HGEN48600/final project/drift_3d.png")
+```{r, echo=FALSE, out.width = '50%',fig.align='center'}
+knitr::include_graphics("drift_3d.png")
 ```
 
 In the picture above, all the masses are initially concentrated at the center. In a few generations, the masses spread out fairly evenly. As time passes, some alleles reach fixation and some are driven out of the population.
@@ -36,8 +35,8 @@ $$
 $$
 Let's pause for a second and think about the interpretation of $\phi(x,t)$. First of all, we highlight the difference between diffusion process and the characterization of genetic drift as binomial sampling (as demonstrated in the first vignette). In the binomial sampling model, we focus on the behavior in a single population. However, when we switch to Markov chain and diffusion process, we are essentially modelling the *average behavior* of allele frequency in many populations. Consider some tiny $dx > 0$, then $\phi(x,t) dx$ can be thought of as the proportion of populations with allele frequency $x$ among an infinite number of "identical" Wright-Fisher populations. Sometimes we also call $\phi(x,t) dx$ the frequency of class $x$ at time $t$. In other words, think of a single population as a small machine that runs its own drifting process. Now we have many such population, each of which is a small machine that runs a drifting process. Although the same set of "instructions" (parameters of genetic drift) are sent to each machine, sampling variation in the drifting process leads to allele frequency variation among populations. If we pause the process at a particular time $t$, we obtain the allele frequency distribution at time $t$ (as a function of $x$, the dummy variable for allele frequency), which is exactly $\phi(x,t)$. Kimura (1955) has a nice diagram that visualizes $\phi(x,t)$.
 
-```{r, echo=FALSE, out.width = '30%'}
-knitr::include_graphics("/Users/EthanZhong/Desktop/phd/coursework/Winter2022/HGEN48600/final project/kimura1955.png")
+```{r, echo=FALSE, out.width = '30%',fig.align='center'}
+knitr::include_graphics("kimura1955.png")
 ```
 
 The distribution in approximated by bins of width $h$. The approximation gets better as $h$ becomes smaller, so think of $h$ tiny. Because the density in each bin is constant, there are only three classes here, represented by the middle points $x-h$, $x$, and $x+h$, respectively. Consider population of allele frequency $x$ (henthforce class $x$ and similarly for other classes), we want to describe its probability of moving to another class after some time $\Delta t$. Recall in the definition of diffusion process, there is a technical condition which ensures continuous path. Therefore, if we take $\Delta t$ sufficiently small, it will move to either class $x-h$ or class $x+h$.\

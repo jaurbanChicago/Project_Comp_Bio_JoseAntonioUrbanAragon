@@ -12,7 +12,7 @@
 <meta name="author" content="Ethan Zhong, Jose Antonio Urban Aragon" />
 
 
-<title>Diffusion process</title>
+<title>Diffusion approximation of genetic drift</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -356,9 +356,10 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Diffusion process</h1>
+<h1 class="title toc-ignore">Diffusion approximation of genetic
+drift</h1>
 <h4 class="author">Ethan Zhong, Jose Antonio Urban Aragon</h4>
-<h4 class="date">3/15/2022</h4>
+<h4 class="date">3/17/2022</h4>
 
 </div>
 
@@ -557,6 +558,8 @@ were generated:
 Untracked files:
     Untracked:  .DS_Store
     Untracked:  .Rhistory
+    Untracked:  bin/drift_3d.png
+    Untracked:  bin/kimura1955.png
 
 Unstaged changes:
     Deleted:    New Folder With Items/.DS_Store
@@ -583,8 +586,8 @@ have uncommitted changes.
 
 <p>
 These are the previous versions of the repository in which changes were
-made to the R Markdown (<code>bin/diffusion_process.Rmd</code>) and HTML
-(<code>docs/diffusion_process.html</code>) files. If you’ve configured a
+made to the R Markdown (<code>bin/diffusion_approx.Rmd</code>) and HTML
+(<code>docs/diffusion_approx.html</code>) files. If you’ve configured a
 remote Git repository (see <code>?wflow_git_remote</code>), click on the
 hyperlinks in the table below to view the files as they were in that
 past version.
@@ -613,138 +616,19 @@ Message
 <tbody>
 <tr>
 <td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/0ca35002fb3087ee8e626070729fd20601d3c1f5/docs/diffusion_process.html" target="_blank">0ca3500</a>
-</td>
-<td>
-jaurbanChicago
-</td>
-<td>
-2022-03-17
-</td>
-<td>
-Added diff html
-</td>
-</tr>
-<tr>
-<td>
 Rmd
 </td>
 <td>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/6ececbae62717f225dfedcfe55712354a40cd0d3/bin/diffusion_process.Rmd" target="_blank">6ececba</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/644b273108b7cd2f24903218ab55b284ca4373c6/bin/diffusion_approx.Rmd" target="_blank">644b273</a>
 </td>
 <td>
 jaurbanChicago
 </td>
 <td>
-2022-03-17
+2022-03-18
 </td>
 <td>
-update diff rmd
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/a311740d4043ff7211b689ab46c8180133bbe94b/docs/diffusion_process.html" target="_blank">a311740</a>
-</td>
-<td>
-jaurbanChicago
-</td>
-<td>
-2022-03-17
-</td>
-<td>
-Removed all htmls
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/651591609fe59d7a8eec75bb27066b03e485e987/bin/diffusion_process.Rmd" target="_blank">6515916</a>
-</td>
-<td>
-jaurbanChicago
-</td>
-<td>
-2022-03-17
-</td>
-<td>
-Added diff process rmd
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/43750b8b92709672b95ec23ff61e7608b06e18bf/bin/diffusion_process.Rmd" target="_blank">43750b8</a>
-</td>
-<td>
-jaurbanChicago
-</td>
-<td>
-2022-03-17
-</td>
-<td>
-deleted diffusion_process.Rmd
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/32d40e6b38027a0ed1c1921c8ef8a3430f299ad2/docs/diffusion_process.html" target="_blank">32d40e6</a>
-</td>
-<td>
-jaurbanChicago
-</td>
-<td>
-2022-03-17
-</td>
-<td>
-Added html
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/06472ac8b74c387e131c89f4d721052fd7c868e1/bin/diffusion_process.Rmd" target="_blank">06472ac</a>
-</td>
-<td>
-jaurbanChicago
-</td>
-<td>
-2022-03-17
-</td>
-<td>
-Added diffusion_process rmd and html
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/06472ac8b74c387e131c89f4d721052fd7c868e1/docs/diffusion_process.html" target="_blank">06472ac</a>
-</td>
-<td>
-jaurbanChicago
-</td>
-<td>
-2022-03-17
-</td>
-<td>
-Added diffusion_process rmd and html
+Added diffusion_approx.Rmd file
 </td>
 </tr>
 </tbody>
@@ -754,308 +638,222 @@ Added diffusion_process rmd and html
 </div>
 </div>
 </div>
-<p>In this vignette, we will learn about an important type of random
-process called the <em>diffusion process</em>.</p>
+<p>While the previous vignette provides a mathematically satisfactory
+(without invoking advanced concepts beyond calculus) derivation of the
+Kolmogorov forward/backward equation for time-homogenenous diffusion
+process, it doesn’t convey too much intuition. In this vignette, we will
+study the classic example of using diffusion process to approximate
+genetic drift (Kimura 1955). As we will see, not only does it provide an
+appealing model for continuous variations of allele frequency, it also
+offers an intuitive justification of the Kolmogorov forward
+equation.</p>
 <div id="prerequisites" class="section level3">
 <h3>Prerequisites</h3>
 <ul>
-<li><strong>A good understanding of calculus (in particular, Taylor’s
-theorem)</strong></li>
-<li><strong>Previous exposure to discrete-time and continuous-time
-Markov chain</strong></li>
+<li><strong>A good understanding of the material in previous
+vignettes</strong></li>
+<li><strong>Able to reason continuous variation and infinitesimal
+changes</strong></li>
 </ul>
 </div>
 <div id="introduction" class="section level3">
 <h3>Introduction</h3>
-<p>Stochastic processes are classified based on <strong>time
-parameter</strong> and <strong>state space</strong>, both of which can
-be either discrete or continuous. This leads to four categories of
-stochastic processes. We spent most of the time in lectures to study
-processes with discrete state space and refer to them as “chains”. Now
-let’s consider the case in which both time parameter and state space are
-continuous.<br />
-<br />
-Let <span class="math inline">\(\{X_t, t \geq 0\}\)</span> be a
-stochastic process, where <span class="math inline">\(X_t\)</span> is a
-continuous random variable with state space <span
-class="math inline">\(S = \mathbb{R}\)</span>. <span
-class="math inline">\(X_t\)</span> is the value of the process at time
-<span class="math inline">\(t\)</span>, and we can interpret it as the
-location of a random particle moving in 1-d (i.e.: on a line). Although
-we can certainly consider more interesting scenarios where the particle
-lives in a space of higher dimensions and describe its position with a
-random vector, for simplicity we only deal with the 1-d case here.<br />
-<br />
-Just like we focused on <em>Markov chain</em> in lectures, in this
-vignette we focus on a special class of stochastic process called the
-<em>Markov process</em>. Markov process is essentially the same concept
-as Markov chain, except that Markov chain implicitly assumes a
-stochastic process with discrete state space. <br />
-<br />
-<strong>Definition.</strong> The stochastic process <span
-class="math inline">\(\{X_t, t \geq 0\}\)</span> described above is a
-<em>Markov process</em> if it satisfies the Markov property-i.e., for
-any sequence of times <span class="math inline">\(0 &lt; t_1 &lt; \dots
-&lt; t_{n-1} &lt; t_n\)</span> and <span class="math inline">\(x_0, x_1,
-\dots, x_{n-1}, y \in S\)</span>, we have: <span class="math display">\[
-\begin{aligned}
-\mathbb{P}(X_{t_n} \leq y \mid X_0 = x_0, X_{t_1} &amp;= x_1, \dots,
-X_{t_{n-1}}= x_{n-1}) = \mathbb{P}(X_{t_n} \leq y \mid X_{t_{n-1}} =
-x_{n-1})
-\end{aligned}
-\]</span> In plain words, a random process possesses Markov property if
-where it goes depends on where it is but not where it was. Note that the
-probability in the definition is stated in terms of cumulative
-distribution due to the continuous nature of the state space. On the
-other hand, we can have equalities in what we condition on because once
-these continuous random variables are realized, they become fixed,
-discrete values.<br />
-<br />
-We also need to characterize the randomness when transitioning between
-different states. Recall that each discrete-time Markov chain (DTMC) has
-a <strong>transition probability matrix</strong>, and each
-continuous-time Markov chain (CTMC) has an <strong>infinitesimal
-generator</strong> that is linked to a <strong>transition probability
-function</strong>. For Markov process with continuous time and
-continuous state space, we define the <strong>transition kernel</strong>
-as follows.<br />
-<br />
-<strong>Definition.</strong> The <em>transition kernel</em> of a Markov
-process <span class="math inline">\(\{X_t, t \geq 0\}\)</span> that is
-continuous in time and state is the cumulative distribution function for
-a transition from state <span class="math inline">\(x\)</span> at time
-<span class="math inline">\(s\)</span> to state <span
-class="math inline">\(y\)</span> at time <span
-class="math inline">\(t\)</span>, <span class="math inline">\(s &lt;
-t\)</span>. The <em>transition kernel</em> is denoted as: <span
-class="math display">\[
-P(x, s, y, t) := \mathbb{P}(X_t \leq y \mid X_s = x)
-\]</span> The corresponding <em>transition density</em> of this
-<em>transition kernel</em> is: <span class="math display">\[
-p(x, s, y, t) := \frac{d}{dy}P(x, s, y, t)
-\]</span> Of course, by the law of total probability, our transition
-density satisfies the <em>Chapman-Kolmogorov equation</em>: <span
-class="math display">\[
-p(x, s, y, t) = \int_{\mathbb{R}} p(x,s,z,u)p(z,u,y,t)dz \hspace{20mm}
-(s&lt;u&lt;t)
-\]</span> Note that this is a complete analog of the CTMC case.
-Specifically, let <span class="math inline">\(\{X(t): t \geq
-0\}\)</span> be a CTMC with state space <span
-class="math inline">\(\Omega\)</span> and transition probability
-functions <span class="math inline">\((P_{ij}(t))_{i,j \in
-\Omega}\)</span>. Then for any <span class="math inline">\(s, t \geq
-0\)</span>: <span class="math display">\[
-P_{ij}(s+t) = \sum_{k \in \Omega} P_{ik}(s)P_{kj}(t)
-\]</span> Therefore, we essentially replace summation with integral
-(again, due to the continuous nature of the state space).<br />
-<br />
-As before, we are mostly interested in the case where the process is
-time homogeneous.<br />
-<br />
-<strong>Definition.</strong> The transition density is said to be
-<em>time-homogeneous</em> if for all <span class="math inline">\(\Delta
-t &gt; 0\)</span>: <span class="math display">\[
-p(x, s, y, t) = p(x, s+\Delta t; t + \Delta t)
-\]</span> In this case, because the density only depends on the length
-of time interval between transitions, we can define <span
-class="math inline">\(t&#39; := t - s\)</span> and adopt a simpler
-notation: <span class="math display">\[
-p(x, y, t&#39;) := p(x, s, y, t)
-\]</span></p>
+<p>The term <strong>diffusion</strong> refers to the general phenomenon
+where particles move from a high concentration region to a lower
+concentration region. In genetic drift, we use diffusion to describe the
+“flattening” effect of random drift on the allele state distributions.
+In 1956, Peter Buri used a <a
+href="https://www.jstor.org/stable/2406998?seq=1">beautiful
+experiment</a> to demonstrate this effect. Briefly, Buri began the
+experiment with 107 populations of D. melanogaster (fruit fly). In each
+population, the frequency of a target allele called <span
+class="math inline">\(\text{bw}^{75}\)</span> is exactly 0.5. Buri
+tracked the allele frequency changes over 19 generations by inferring
+the genotype of each fly from its eye color. The changes in allele
+frequency distribution vividly describe the effect of genetic drift on
+many populations.</p>
+<p><img src="drift_3d.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>In the picture above, all the masses are initially concentrated at
+the center. In a few generations, the masses spread out fairly evenly.
+As time passes, some alleles reach fixation and some are driven out of
+the population.</p>
 </div>
-<div id="diffusion-process-in-1-d" class="section level3">
-<h3>Diffusion process in 1-d</h3>
-<p>Now we are ready to define diffusion process. A diffusion process can
-be uniquely specified by its two (deterministic) components:
-<strong>infinitesimal mean</strong> (sometimes called
-<strong>drift</strong>) and <strong>infinitesimal variance</strong>
-(sometimes called <strong>quadratic variation</strong>).<br />
+<div id="derivation-of-forward-equation" class="section level3">
+<h3>Derivation of forward equation</h3>
+<p>In fact, compared to our derivation, Kimura’s intuitive justification
+applies to a broader class of diffusion processes, in that it doesn’t
+assume time-homogeneity.<br />
 <br />
-<strong>Definition.</strong> Let <span class="math inline">\(\{X_t, t
-\geq 0\}\)</span> be a Markov process with state space <span
-class="math inline">\(S \in \mathbb{R}\)</span>, having a transition
-density given by <span class="math inline">\(p(x,s,y,t)\)</span>. Then
-<span class="math inline">\(\{X_t, t \geq 0\}\)</span> is a
-<em>diffusion process</em> if: <span class="math display">\[
-\begin{aligned}
-\mu(x, s) &amp;= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t}
-\int_{\mathbb{R}} (y - x) p(x,s,y,s+\Delta t)dy\\
-\sigma^2(x, s) &amp;= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t}
-\int_{\mathbb{R}} (y - x)^2 p(x,s,y,s+\Delta t)dy\\
-0 &amp;= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t}
-\int_{\mathbb{R}} |y - x|^q p(x,s,y,s+\Delta t)dy, \hspace{1mm}
-\text{for all } q &gt; 2
-\end{aligned}
-\]</span> Here, <span class="math inline">\(\mu(x, s)\)</span> is the
-<em>infinitesimal mean</em> and <span class="math inline">\(\sigma^2(x,
-s)\)</span> is the <em>infinitesimal variance</em>. The third equation
-is a technical condition that ensures the <strong>sample paths</strong>,
-realizations of the process, are continuous.</p>
-</div>
-<div id="forward-and-backward-equations" class="section level3">
-<h3>Forward and backward equations</h3>
-<p>As usual, we can use the Chapman-Kolmogorov equation to derive
-Kolmogorov forward and backward equations for a diffusion process. For
-simplicity, we restrict ourselves to the time-homogeneous case.<br />
+Consider a locus with a pair of alleles <span
+class="math inline">\(A_1\)</span> and <span
+class="math inline">\(A_2\)</span> segregating in a population. Let
+<span class="math inline">\(A_1\)</span> be the focal allele with
+frequency <span class="math inline">\(p\)</span> at time 0. Following
+our notation in the previous vignette, <span
+class="math inline">\(\phi(p,0,x,t)\)</span> is the transition density
+for the frequency of <span class="math inline">\(A_1\)</span>, <span
+class="math inline">\(x\)</span>, at time <span
+class="math inline">\(t\)</span>. Note that we use <span
+class="math inline">\(\phi(\cdot)\)</span> instead of <span
+class="math inline">\(p(\cdot)\)</span> to avoid confusion between
+density and initial frequency. We can further simplify our notation to
+<span class="math inline">\(\phi(x,t)\)</span> as 0 and <span
+class="math inline">\(p\)</span> are both fixed quantities. The forward
+equation is: <span class="math display">\[
+\frac{d}{dt}\phi(x,t) = -\frac{d}{dx}\{\phi(x,t)\mu(x, t)\} +
+\frac{1}{2}\frac{d^2}{dx^2}\{\phi(x,t)\sigma^2(x,t) \}
+\]</span> Let’s pause for a second and think about the interpretation of
+<span class="math inline">\(\phi(x,t)\)</span>. First of all, we
+highlight the difference between diffusion process and the
+characterization of genetic drift as binomial sampling (as demonstrated
+in the first vignette). In the binomial sampling model, we focus on the
+behavior in a single population. However, when we switch to Markov chain
+and diffusion process, we are essentially modelling the <em>average
+behavior</em> of allele frequency in many populations. Consider some
+tiny <span class="math inline">\(dx &gt; 0\)</span>, then <span
+class="math inline">\(\phi(x,t) dx\)</span> can be thought of as the
+proportion of populations with allele frequency <span
+class="math inline">\(x\)</span> among an infinite number of “identical”
+Wright-Fisher populations. Sometimes we also call <span
+class="math inline">\(\phi(x,t) dx\)</span> the frequency of class <span
+class="math inline">\(x\)</span> at time <span
+class="math inline">\(t\)</span>. In other words, think of a single
+population as a small machine that runs its own drifting process. Now we
+have many such population, each of which is a small machine that runs a
+drifting process. Although the same set of “instructions” (parameters of
+genetic drift) are sent to each machine, sampling variation in the
+drifting process leads to allele frequency variation among populations.
+If we pause the process at a particular time <span
+class="math inline">\(t\)</span>, we obtain the allele frequency
+distribution at time <span class="math inline">\(t\)</span> (as a
+function of <span class="math inline">\(x\)</span>, the dummy variable
+for allele frequency), which is exactly <span
+class="math inline">\(\phi(x,t)\)</span>. Kimura (1955) has a nice
+diagram that visualizes <span
+class="math inline">\(\phi(x,t)\)</span>.</p>
+<p><img src="kimura1955.png" width="30%" style="display: block; margin: auto;" /></p>
+<p>The distribution in approximated by bins of width <span
+class="math inline">\(h\)</span>. The approximation gets better as <span
+class="math inline">\(h\)</span> becomes smaller, so think of <span
+class="math inline">\(h\)</span> tiny. Because the density in each bin
+is constant, there are only three classes here, represented by the
+middle points <span class="math inline">\(x-h\)</span>, <span
+class="math inline">\(x\)</span>, and <span
+class="math inline">\(x+h\)</span>, respectively. Consider population of
+allele frequency <span class="math inline">\(x\)</span> (henthforce
+class <span class="math inline">\(x\)</span> and similarly for other
+classes), we want to describe its probability of moving to another class
+after some time <span class="math inline">\(\Delta t\)</span>. Recall in
+the definition of diffusion process, there is a technical condition
+which ensures continuous path. Therefore, if we take <span
+class="math inline">\(\Delta t\)</span> sufficiently small, it will move
+to either class <span class="math inline">\(x-h\)</span> or class <span
+class="math inline">\(x+h\)</span>.<br />
 <br />
-By time-homogeneity, we can rewrite the transition density as <span
-class="math inline">\(p(x, x&#39;,t)\)</span>, where <span
-class="math inline">\(x\)</span> is the initial state and <span
-class="math inline">\(x&#39;\)</span> is the endpoint after <span
-class="math inline">\(t\)</span> units of time. Consider the time
-derivative of the transition density: <span class="math display">\[
-\frac{d}{dt}p(x,x&#39;,t) = \lim_{\Delta t \rightarrow 0}
-\frac{p(x,x&#39;,t+\Delta t) - p(x,x&#39;,t)}{\Delta t}
-\]</span> Note that we can expand <span
-class="math inline">\(p(x,x&#39;,t+\Delta t)\)</span> with the
-Chapman-Kolmogorov equation in two ways: <span class="math display">\[
-\begin{aligned}
-p(x, x&#39;, t+\Delta t) &amp;= \int_{\mathbb{R}}
-p(x,z,t)p(z,x&#39;,\Delta t)dz\\
-p(x,x&#39;,t+\Delta t) &amp;= \int_{\mathbb{R}} p(x,z,\Delta
-t)p(z,x&#39;,t)dz
-\end{aligned}
-\]</span> The first one corresponds to the forward equation and the
-second one corresponds to the backward equation. We derive the backward
-equation first. By Taylor expansion of <span
-class="math inline">\(p(z,x&#39;,t)\)</span> in <span
-class="math inline">\(z\)</span> about <span
-class="math inline">\(x\)</span>, we get: <span class="math display">\[
-\begin{aligned}
-p(z,x&#39;,t) &amp;= p(x,x&#39;,t) +
-(z-x)\frac{d}{dx}p(x,x&#39;,t)+\frac{1}{2}(z-x)^2\frac{d^2}{dx^2}p(x,x&#39;,t)
-+ O(\Delta t^3)
-\end{aligned}
-\]</span> Substituting back, we have: <span class="math display">\[
-\begin{aligned}
-p(x,x&#39;,t+\Delta t) - p(x, x&#39;, t) &amp;= p(x,x&#39;,t)
-\int_{\mathbb{R}} p(x,z,\Delta t)dz \\ &amp;+
-\frac{d}{dx}p(x,x&#39;,t)\int_{\mathbb{R}}(z-x)p(x,z,\Delta t)dz \\
-&amp;+\frac{1}{2}\frac{d^2}{dx^2}p(x,x&#39;,t) \int_{\mathbb{R}} (z-x)^2
-p(x,z,\Delta t)dz \\ &amp;+ O(\Delta t^3) \\ &amp;- p(x,x&#39;,t)
-\end{aligned}
-\]</span> Plugging in the definition of diffusion process and divide
-both sides of the equation by <span class="math inline">\(\Delta
-t\)</span>. Take the limit as <span class="math inline">\(\Delta t
-\rightarrow 0\)</span>, we obtain the <strong>backward
-equation</strong>: <span class="math display">\[
-\frac{d}{dt}p(x,x&#39;,t) = \mu(x) \frac{d}{dx}p(x,x&#39;,t) +
-\frac{1}{2} \sigma^2(x) \frac{d^2}{dx^2}p(x,x&#39;,t)
-\]</span> It is a backward equation because it captures the dynamics of
-all the states going backward in time.<br />
-<br />
-To derive the forward equation, we first change the notation of
-transition density to <span class="math inline">\(p(x_0, x, t)\)</span>.
-Here, the initial state is <span class="math inline">\(x_0\)</span>, and
-<span class="math inline">\(x\)</span> is the endpoint after <span
-class="math inline">\(t\)</span> units of time. Again, we have the
-following time derivative: <span class="math display">\[
-\begin{aligned}
-\frac{d}{dt}p(x_0,x,t) &amp;= \lim_{\Delta t \rightarrow 0}
-\frac{p(x_0,x,t+\Delta t) - p(x_0,x,t)}{\Delta t} \\ &amp;= \lim_{\Delta
-t \rightarrow 0} \frac{\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz -
-p(x_0,x,t)}{\Delta t}
-\end{aligned}
-\]</span> Instead of performing Taylor expansion, we adopt a different
-strategy. The intuition behind this strategy is that if we want to show
-two functions (say <span class="math inline">\(f(x)\)</span> and <span
-class="math inline">\(g(x)\)</span>) are identical, we can instead
-demonstrate that <span class="math inline">\(\int_{\mathbb{R}}f(x)h(x)dx
-=\int_{\mathbb{R}}g(x)h(x)dx\)</span> for all <span
-class="math inline">\(h(x)\)</span> with some good properties (e.g.:
-smooth, compactly supported). This set of <span
-class="math inline">\(h(x)\)</span> is called the set of <strong>test
-functions</strong>. If you find it confusing, it’s okay to take it for
-granted as this is a very standard trick in mathematical analysis. If
-you want to see more details, check out this Wikipedia page on
-<strong>distribution</strong>: <a
-href="https://en.wikipedia.org/wiki/Distribution_(mathematics)"
-class="uri">https://en.wikipedia.org/wiki/Distribution_(mathematics)</a>.<br />
-<br />
-We pick some smooth, compactly supported test function <span
-class="math inline">\(h\)</span> and evaluate the following integral:
+We also consider two forces that drive the population to different
+classes: systematic pressure and randomness. Let <span
+class="math inline">\(m(x,t)\Delta t\)</span> be the probability that
+the population moves to class <span class="math inline">\(x+h\)</span>
+after time <span class="math inline">\(\Delta t\)</span> due to
+systematic pressure. Note that the pressure can be specified in either
+direction without loss of generality. Let <span
+class="math inline">\(v(x,t)\Delta t\)</span> be the probability that
+the population move to a different class after time <span
+class="math inline">\(\Delta t\)</span> due to randomness. Therefore, if
+the population leaves the current class (say, class <span
+class="math inline">\(x\)</span>) by randomness, half of time it moves
+to class <span class="math inline">\(x-h\)</span> and half of the time
+to class <span class="math inline">\(x+h\)</span>. We can write the
+density after time <span class="math inline">\(\Delta t\)</span> as:
 <span class="math display">\[
 \begin{aligned}
-\int_{\mathbb{R}}h(x)dx\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz
-&amp;= \int_{\mathbb{R}}h(x)\{\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta
-t)dz\}dx \hspace{10mm} (*) \\ &amp;=
-\int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz
+\phi(x,t+\Delta t)h &amp;= \phi(x,t)h \\ &amp;- [v(x,t)+m(x,t)]\Delta t
+\phi(x,t)h \hspace{10mm} (\star) \\ &amp;+ \frac{1}{2}v(x-h,t)\Delta t
+\phi(x-h,t) + \frac{1}{2}v(x+h, t)\Delta t \phi(x+h,t)h \hspace{10mm}
+(\star\star)\\ &amp;+ m(x-h,t)\Delta t \phi(x-h, t)h \hspace{10mm}
+(\star\star\star)
 \end{aligned}
-\]</span> Now we can do Taylor expansion for <span
-class="math inline">\(h(x)\)</span> about <span
-class="math inline">\(z\)</span>. Leveraging the definition of diffusion
-process and dropping the higher-order terms, we have for small <span
-class="math inline">\(\Delta t\)</span>: <span class="math display">\[
+\]</span> Let’s translate the above equation into plain English. <span
+class="math inline">\((\star)\)</span> represents the probability mass
+leaving class <span class="math inline">\(x\)</span> per <span
+class="math inline">\(\Delta t\)</span> at time <span
+class="math inline">\(t\)</span>; <span
+class="math inline">\((\star\star)\)</span> represents the probability
+mass moving into class <span class="math inline">\(x\)</span> per <span
+class="math inline">\(\Delta t\)</span> from the other two classes due
+to randomness; <span class="math inline">\((\star\star\star)\)</span>
+represents the probability mass moving into class <span
+class="math inline">\(x\)</span> per <span class="math inline">\(\Delta
+t\)</span> from class <span class="math inline">\(x-h\)</span> by
+systematic pressure (i.e.: the wind only blows from left to right).
+Together, <span class="math inline">\((\star\star)\)</span> and <span
+class="math inline">\((\star\star\star)\)</span> represent the
+probability mass entering class <span class="math inline">\(x\)</span>
+per <span class="math inline">\(\Delta t\)</span> at time <span
+class="math inline">\(t\)</span>. Hence, the previous equation says:
+<span class="math display">\[
 \begin{aligned}
-\int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz
-&amp;= \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}} [h(z) + (x-z)
-\frac{d}{dz}h(z)+\frac{1}{2} (x-z)^2 \frac{d^2}{dz^2}h(z) + O(\Delta
-t^3)] p(z,x,\Delta t)dxdz \\ &amp;= \int_{\mathbb{R}}p(x_0,z,t) [h(z) +
-\mu(z) \frac{d}{dz}h(z)\Delta t + \frac{1}{2} \sigma^2(z)
-\frac{d^2}{dz^2}h(z) \Delta t] dz \\ &amp;= \int_{\mathbb{R}} p(x_0,z,t)
-h (z) dz + \Delta t \int_{\mathbb{R}} p(x_0,z,t) \mu(z) h&#39;(z) dz +
-\Delta t \int_{\mathbb{R}} p(x_0,z,t) \frac{1}{2} \sigma^2(z)
-h&#39;&#39;(z) dz \\ &amp;=  \int_{\mathbb{R}} p(x_0,z,t) h (z) dz -
-\Delta t \int_{\mathbb{R}} h(z) \frac{d}{dz}\{p(x_0,z,t) \mu(z)\} dz +
-\Delta t \int_{\mathbb{R}} \frac{1}{2} h(z)
-\frac{d^2}{dz^2}\{p(x_0,z,t)\sigma^2(z)\}dz \\ &amp;= \int_{\mathbb{R}}
-h(x) [p(x_0,x,t) - \Delta t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} +
-\frac{1}{2} \Delta t \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}] dx
-\hspace{10mm} (**)
+\text{the probability mass in class } x \text{ at time } (t + \Delta t)
+&amp;= \text{the probability mass in class } x \text{ at time } t \\
+&amp;- \text{the probability mass leaving class } x \text{ per } \Delta
+t \text{ at time } t \\ &amp;+ \text{the probability mass entering class
+} x \text{ per } \Delta t \text{ at time } t
 \end{aligned}
-\]</span> The calculations might seem a bit daunting at first glance.
-However, note that because <span class="math inline">\(h\)</span> and
-<span class="math inline">\(h&#39;\)</span> both have compact support,
-they vanish at <span class="math inline">\(-\infty\)</span> and <span
-class="math inline">\(\infty\)</span>. Using this fact, we can compute
-the integrals easily. Specifically, the fourth equality follows from
-integration by part, and <span class="math inline">\(\int_{\mathbb{R}}
-h&#39;(x) f(x) dx\)</span> is just <span
-class="math inline">\(-\int_{\mathbb{R}} h(x) f&#39;(x) dx\)</span> in
-this case.<br />
-<br />
-Now, comparing <span class="math inline">\((*)\)</span> with <span
-class="math inline">\((**)\)</span> gives: <span class="math display">\[
-\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz = p(x_0,x,t) - \Delta
-t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2} \Delta t
-\frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}
-\]</span> Reorder the terms and take the limit as <span
-class="math inline">\(\Delta t \rightarrow 0\)</span>, we obtain the
-<strong>forward equation</strong>: <span class="math display">\[
-\frac{d}{dt}p(x_0,x,t) = -\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} +
-\frac{1}{2}\frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}
-\]</span> The Kolmogorov forward equation is also referred to as the
-<em>Fokker-Plank equation</em>. It is a forward equation because it
-captures the dynamics of all the states going forward in time.<br />
-<br />
-In summary, for time-homogeneous diffusion process, we have: <span
+\]</span> Cool! Now we can define <span
+class="math inline">\(\sigma^2(x,t)\)</span> and <span
+class="math inline">\(\mu(x,t)\)</span>. Let: <span
 class="math display">\[
 \begin{aligned}
-\frac{d}{dt}p(x_0,x,t) &amp;= -\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} +
-\frac{1}{2}\frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\} \hspace{10mm}
-\text{(forward equation)} \\
-\frac{d}{dt}p(x,x&#39;,t) &amp;= \mu(x) \frac{d}{dx}p(x,x&#39;,t) +
-\frac{1}{2} \sigma^2(x) \frac{d^2}{dx^2}p(x,x&#39;,t) \hspace{22mm}
-\text{(backward equation)}
+\sigma^2(x,t) \Delta t &amp;= h^2 \frac{1}{2}v(x,t)\Delta t + (-h)^2
+\frac{1}{2}v(x,t)\Delta t\\
+\mu(x,t) \Delta t &amp;= hm(x,t)\Delta t
 \end{aligned}
-\]</span> Though not to be derived, for completeness, here are the
-forward and backward equations corresponding to nonhomogeneous diffusion
-process: <span class="math display">\[
+\]</span> In other words, <span class="math inline">\(\sigma^2(x,t)
+\Delta t\)</span> is the variance of the per <span
+class="math inline">\(\Delta t\)</span> change in <span
+class="math inline">\(x\)</span> due to randomness, and <span
+class="math inline">\(\mu(x,t) \Delta t\)</span> is the average per
+<span class="math inline">\(\Delta t\)</span> change in <span
+class="math inline">\(x\)</span>. Dividing both sides by <span
+class="math inline">\(\Delta t\)</span>, we have: <span
+class="math display">\[
 \begin{aligned}
-\frac{d}{dt}p(x,s,y,t) &amp;= -\frac{d}{dy}\{p(x,s,y,t)\mu(y, t)\} +
-\frac{1}{2}\frac{d^2}{dy^2}\{p(x,s,y,t)\sigma^2(y,t)\} \hspace{10mm}
-\text{(forward equation)} \\
-\frac{d}{dt}p(x,s,y,t) &amp;= -\mu(x,t) \frac{d}{dx}p(x,s,y,t) -
-\frac{1}{2}\sigma^2(x,t)\frac{d^2}{dx^2}p(x,s,y,t) \hspace{17mm}
-\text{(backward equation)}
+\sigma^2(x,t) &amp;= h^2 v(x,t)\\
+\mu(x,t) &amp;= hm(x,t)
 \end{aligned}
+\]</span> Although <span class="math inline">\(\Delta t\)</span> is
+short, it still counts as a segment. Now we are looking at a particle.
+We should interpret <span class="math inline">\(\sigma^2(x,t)\)</span>
+as the variance per infinitesimal time change in <span
+class="math inline">\(x\)</span> due to randomness and <span
+class="math inline">\(\mu(x,t)\)</span> the average per infinitesimal
+time change in <span class="math inline">\(x\)</span>. Recall in the
+definition of diffusion process, we call <span
+class="math inline">\(\mu(x,t)\)</span> the <strong>infinitesimal
+mean</strong> and <span class="math inline">\(\sigma^2(x,t)\)</span> the
+<strong>infinitesimal variance</strong>.<br />
+<br />
+Eventually, we want to find an expression for the time derivative: <span
+class="math display">\[
+\lim_{\Delta t \rightarrow 0}  \frac{\phi(x,t+\Delta t) -
+\phi(x,t)}{\Delta t}
+\]</span> This is easy because we can substitute <span
+class="math inline">\(\sigma^2(x,t)\)</span> and <span
+class="math inline">\(\mu(x,t)\)</span> back to the equation for <span
+class="math inline">\(\phi(x,t+\Delta t)h\)</span>. With some standard
+algebraic manipulations, we have the desired forward equation (remember
+to take the limit as <span class="math inline">\(h \rightarrow
+0\)</span> because we start with an approximation of the distribution):
+<span class="math display">\[
+\frac{d}{dt}\phi(x,t) = -\frac{d}{dx}\{\phi(x,t)\mu(x, t)\} +
+\frac{1}{2}\frac{d^2}{dx^2}\{\phi(x,t)\sigma^2(x,t) \}
 \]</span></p>
 </div>
 <div id="main-reference" class="section level3">
 <h3>Main reference</h3>
 <ul>
-<li><em>An Introduction to Stochastic Processes with Applications to
-Biology by Linda J. S. Allen</em></li>
+<li><em>Stochastic processes and distribution of gene frequencies under
+natural selection by Motoo Kimura (1955)</em></li>
 </ul>
 <br>
 <p>
@@ -1083,14 +881,15 @@ attached base packages:
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.8.2     rstudioapi_0.13  whisker_0.4      knitr_1.37      
  [5] magrittr_2.0.2   workflowr_1.7.0  R6_2.5.1         rlang_1.0.2     
- [9] fastmap_1.1.0    fansi_1.0.2      stringr_1.4.0    tools_4.1.2     
-[13] xfun_0.29        utf8_1.2.2       cli_3.2.0        jquerylib_0.1.4 
-[17] git2r_0.29.0     htmltools_0.5.2  ellipsis_0.3.2   yaml_2.2.2      
-[21] digest_0.6.29    rprojroot_2.0.2  lifecycle_1.0.1  tibble_3.1.6    
-[25] crayon_1.5.0     later_1.3.0      vctrs_0.3.8      sass_0.4.0      
-[29] promises_1.2.0.1 fs_1.5.2         glue_1.6.2       evaluate_0.14   
-[33] rmarkdown_2.11   stringi_1.7.6    pillar_1.7.0     compiler_4.1.2  
-[37] bslib_0.3.1      jsonlite_1.8.0   httpuv_1.6.5     pkgconfig_2.0.3 </code></pre>
+ [9] fastmap_1.1.0    fansi_1.0.2      highr_0.9        stringr_1.4.0   
+[13] tools_4.1.2      xfun_0.29        utf8_1.2.2       cli_3.2.0       
+[17] jquerylib_0.1.4  git2r_0.29.0     htmltools_0.5.2  ellipsis_0.3.2  
+[21] yaml_2.2.2       digest_0.6.29    rprojroot_2.0.2  lifecycle_1.0.1 
+[25] tibble_3.1.6     crayon_1.5.0     later_1.3.0      vctrs_0.3.8     
+[29] sass_0.4.0       promises_1.2.0.1 fs_1.5.2         glue_1.6.2      
+[33] evaluate_0.14    rmarkdown_2.11   stringi_1.7.6    pillar_1.7.0    
+[37] compiler_4.1.2   bslib_0.3.1      jsonlite_1.8.0   httpuv_1.6.5    
+[41] pkgconfig_2.0.3 </code></pre>
 </div>
 </div>
 
