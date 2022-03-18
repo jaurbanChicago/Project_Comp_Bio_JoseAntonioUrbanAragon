@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Jose Antonio Urban Aragon" />
+<meta name="author" content="Jose Antonio Urban Aragon, Ethan Zhong" />
 
 
 <title>Genetic Drift in a Finite Population as an Example of Stochastic Modeling</title>
@@ -358,7 +358,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Genetic Drift in a Finite Population as an
 Example of Stochastic Modeling</h1>
-<h4 class="author">Jose Antonio Urban Aragon</h4>
+<h4 class="author">Jose Antonio Urban Aragon, Ethan Zhong</h4>
 <h4 class="date">3/13/2022</h4>
 
 </div>
@@ -523,15 +523,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree112890cb54d3e50ade8b37ac80fa7c8c5a5d52eatargetblank112890ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2targetblank6ad5355a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/112890cb54d3e50ade8b37ac80fa7c8c5a5d52ea" target="_blank">112890c</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2" target="_blank">6ad5355</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree112890cb54d3e50ade8b37ac80fa7c8c5a5d52eatargetblank112890ca"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2targetblank6ad5355a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -541,7 +541,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/112890cb54d3e50ade8b37ac80fa7c8c5a5d52ea" target="_blank">112890c</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2" target="_blank">6ad5355</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -565,6 +565,7 @@ Unstaged changes:
     Deleted:    New Folder With Items/_site.yml
     Deleted:    New Folder With Items/include/footer.html
     Modified:   bin/Genetic_Drift_Introduction.Rmd
+    Modified:   bin/Genetic_Drift_Markov.Rmd
     Deleted:    index.html
 
 </code></pre>
@@ -611,6 +612,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2/bin/Genetic_Drift_Introduction.Rmd" target="_blank">6ad5355</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+Minor updates
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/6ad5355b0d2e4a20eb74b4b4e3e3a8870bb591b2/docs/Genetic_Drift_Introduction.html" target="_blank">6ad5355</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+Minor updates
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1077,7 +1112,8 @@ frequent or almost equally frequent, sampling error is equally likely to
 increase or decrease allele frequency and its outcomes could vary more
 widely along the spectrum of possible allele frequencies.</p>
 <p>The following code will demonstrate how the variability of the
-outcomes of the sampling process depends,in part, to :</p>
+outcomes of the sampling process depends,in part, to allele frequencies
+at time <span class="math inline">\(t\)</span>:</p>
 <pre class="r"><code>library(tidyverse)
 # Vector of allele frequency for allele A
 p &lt;-  seq(0,1,by=0.01) # Frequency p of A allele
@@ -1225,7 +1261,8 @@ class="section level3">
 <h3>Diffusion Process (Continuous time approximation of the Markov chain
 model)</h3>
 <p>The diffusion process model of genetic drift will be explained in the
-following <a href="">vignette</a>.</p>
+following vignettes: * <a href="">Introduction to Difussion
+Processes</a> * <a href="">Difussion Processes and Genetic Drift</a></p>
 </div>
 </div>
 <div id="references" class="section level1">

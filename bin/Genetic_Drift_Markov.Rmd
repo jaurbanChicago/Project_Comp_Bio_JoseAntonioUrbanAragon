@@ -1,6 +1,6 @@
 ---
 title: "Markov Chain Model of Genetic Drift"
-author: "Jose Antonio Urban Aragon"
+author: "Jose Antonio Urban Aragon, Ethan Zhong"
 date: "3/16/2022"
 ---
 
@@ -10,7 +10,7 @@ date: "3/16/2022"
   * Basic notions of probability theory
   * Basic notions of population genetics
 
-# Brief Introduction to Discrete Markov Chains
+# Introduction to Discrete Markov Chains
 
 Before getting into the specific details of the relationship between Markov chains and genetic drift, it is necessary to briefly explain what a discrete, finite Markov chain is.    
   
@@ -36,4 +36,28 @@ p_{M0} & p_{M1} & ... & p_{MM}
 $$
 
 
-Next, we are going to describe some important characteristics and features of a Markov chain that will be relevant for understanding its relationship with genetic drift
+Next, we are going to classify the chains in two different classes:  
+
+  * **Irreducible**: All states can communicate with one another[3].
+  * **Ergodic**: Irreducible, recurrent, and aperiodic. Recurrent means that every state $E_i$ can reenter $E_i$ often infinitely when the chain starts at this particular $E_i$., i.e. $f_{i}=1$. Aperiodic means all of the Markov chain states are aperiodic [3].  
+  
+
+For the remainder of this vignette, it is important to denote that we will be working with Markov chains that have no periodicities in them, which hardly arise in any genetical applications [2]. Finally, we need to define the concept of **stationary distribution** of a Markov chain. A stationary distribution may be defined with the following mathematical terms [3]:  
+
+$$
+\mathbb{Consider \space}P^t \space \mathbb{as \space t \space gets \space large}:\\
+\lim_{t\to\infty}(\pi^{(0)})^TP^t=\pi^T ; \space \mathbb{the \space \pi \space vector \space is \space the \space limiting \space distribution \space of \space the \space Markov \space chain}\\
+\mathbb{Stationarity \space property \space of \space \pi}:\\
+\pi^T=\pi^TP; \space \mathbb{because} \space \pi_i=\sum_k \pi_kP_{ki} 
+$$
+For ergodic chains, the limiting distribution is also the stationary distribution and there is only one unique stationary distribution (i.e., equilibrium distribution) [3]. To obtain the stationary distribution of the Markov chain, we can use matrix exponentiation (each row of the resulting matrix will have $\pi$ in each row), solve linear equations (solve for $\pi^T=\pi^TP$), and use eigendecomposition ($\pi$ is left eigenvector of $P$, so eigendecomposition can lead to $\pi$).
+
+
+# Markov Chains in Genetic Drift
+
+A **discrete Markov chain** can be quite helpful 
+
+
+
+
+

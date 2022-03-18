@@ -1,6 +1,6 @@
 ---
 title: Genetic Drift in a Finite Population as an Example of Stochastic Modeling
-author: "Jose Antonio Urban Aragon"
+author: "Jose Antonio Urban Aragon, Ethan Zhong"
 date: 3/13/2022
 ---
 
@@ -73,7 +73,7 @@ $$
  As we may infer from the formulas, the maximum variability in the outcomes of the alleles' binomial sampling process will occur when **the frequency $p$ of $A$ equals the frequency $1-p$ of $A$ ($p=1-p=0.5$)**[1]. This makes intuitive sense because as the frequency of one of the alleles reaches fixation , the sampling error that results in greatly increased frequencies of the low-frequency allele in one generation will be very highly unlikely [1]. On the other hand, when both alleles are equally frequent or almost equally frequent, sampling error is equally likely to increase or decrease allele frequency and its outcomes could vary more widely along the spectrum of possible allele frequencies.  
   
   
-The following code will demonstrate how the variability of the outcomes of the sampling process depends,in part, to : 
+The following code will demonstrate how the variability of the outcomes of the sampling process depends,in part, to allele frequencies at time $t$: 
 
 
 ```{r,message=FALSE}
@@ -149,8 +149,9 @@ The Markov chain model of genetic drift will be explained in the following [vign
 ### Diffusion Process (Continuous time approximation of the Markov chain model)
 
 
-The diffusion process model of genetic drift will be explained in the following [vignette]().
-
+The diffusion process model of genetic drift will be explained in the following vignettes:
+  * [Introduction to Difussion Processes]()
+  * [Difussion Processes and Genetic Drift]()
 
 
 # References
