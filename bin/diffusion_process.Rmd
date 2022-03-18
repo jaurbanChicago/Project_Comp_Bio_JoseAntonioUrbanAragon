@@ -1,0 +1,165 @@
+---
+title: "Diffusion process"
+author: "Ethan Zhong, Toño Urbán"
+date: "3/15/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this vignette, we will learn about an important type of random process called the *diffusion process*.
+
+### Prerequisites
+
+* **A good understanding of calculus (in particular, Taylor's theorem)**
+* **Previous exposure to discrete-time and continuous-time Markov chain**
+
+### Introduction
+
+Stochastic processes are classified based on **time parameter** and **state space**, both of which can be either discrete or continuous. This leads to four categories of stochastic processes. We spent most of the time in lectures to study processes with discrete state space and refer to them as "chains". Now let's consider the case in which both time parameter and state space are continuous.\
+\
+Let $\{X_t,  t \geq 0\}$ be a stochastic process, where $X_t$ is a continuous random variable with state space $S = \mathbb{R}$. $X_t$ is the value of the process at time $t$, and we can interpret it as the location of a random particle moving in 1-d (i.e.: on a line). Although we can certainly consider more interesting scenarios where the particle lives in a space of higher dimensions and describe its position with a random vector, for simplicity we only deal with the 1-d case here.\
+\
+Just like we focused on *Markov chain* in lectures, in this vignette we focus on a special class of stochastic process called the *Markov process*. Markov process is essentially the same concept as Markov chain, except that Markov chain implicitly assumes a stochastic process with discrete state space.\   
+\
+**Definition.** The stochastic process $\{X_t, t \geq 0\}$ described above is a *Markov process* if it satisfies the Markov property-i.e., for any sequence of times $0 < t_1 < \dots < t_{n-1} < t_n$ and $x_0, x_1, \dots, x_{n-1}, y \in S$, we have:
+$$
+\begin{aligned}
+\mathbb{P}(X_{t_n} \leq y \mid X_0 = x_0, X_{t_1} &= x_1, \dots, X_{t_{n-1}}= x_{n-1}) = \mathbb{P}(X_{t_n} \leq y \mid X_{t_{n-1}} = x_{n-1})
+\end{aligned}
+$$
+In plain words, a random process possesses Markov property if where it goes depends on where it is but not where it was. Note that the probability in the definition is stated in terms of cumulative distribution due to the continuous nature of the state space. On the other hand, we can have equalities in what we condition on because once these continuous random variables are realized, they become fixed, discrete values.\
+\
+We also need to characterize the randomness when transitioning between different states. Recall that each discrete-time Markov chain (DTMC) has a **transition probability matrix**, and each continuous-time Markov chain (CTMC) has an **infinitesimal generator** that is linked to a **transition probability function**. For Markov process with continuous time and continuous state space, we define the **transition kernel** as follows.\
+\
+**Definition.** The *transition kernel* of a Markov process $\{X_t,  t \geq 0\}$ that is continuous in time and state is the cumulative distribution function for a transition from state $x$ at time $s$ to state $y$ at time $t$, $s < t$. The *transition kernel* is denoted as: 
+$$
+P(x, s, y, t) := \mathbb{P}(X_t \leq y \mid X_s = x)
+$$
+The corresponding *transition density* of this *transition kernel* is:
+$$
+p(x, s, y, t) := \frac{d}{dy}P(x, s, y, t)
+$$
+Of course, by the law of total probability, our transition density satisfies the *Chapman-Kolmogorov equation*:
+$$
+p(x, s, y, t) = \int_{\mathbb{R}} p(x,s,z,u)p(z,u,y,t)dz \hspace{20mm} (s<u<t)
+$$
+Note that this is a complete analog of the CTMC case. Specifically, let $\{X(t): t \geq 0\}$ be a CTMC with state space $\Omega$ and transition probability functions $(P_{ij}(t))_{i,j \in \Omega}$. Then for any $s, t \geq 0$:
+$$
+P_{ij}(s+t) = \sum_{k \in \Omega} P_{ik}(s)P_{kj}(t)
+$$
+Therefore, we essentially replace summation with integral (again, due to the continuous nature of the state space).\
+\
+As before, we are mostly interested in the case where the process is time homogeneous.\
+\
+**Definition.** The transition density is said to be *time-homogeneous* if for all $\Delta t > 0$:
+$$
+p(x, s, y, t) = p(x, s+\Delta t; t + \Delta t)
+$$
+In this case, because the density only depends on the length of time interval between transitions, we can define $t' := t - s$ and adopt a simpler notation:
+$$
+p(x, y, t') := p(x, s, y, t)
+$$
+
+### Diffusion process in 1-d
+
+Now we are ready to define diffusion process. A diffusion process can be uniquely specified by its two (deterministic) components: **infinitesimal mean** (sometimes called **drift**) and **infinitesimal variance** (sometimes called **quadratic variation**).\
+\
+**Definition.** Let $\{X_t, t \geq 0\}$ be a Markov process with state space $S \in \mathbb{R}$, having a transition density given by $p(x,s,y,t)$. Then $\{X_t, t \geq 0\}$ is a *diffusion process* if:
+$$
+\begin{aligned}
+\mu(x, s) &= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t} \int_{\mathbb{R}} (y - x) p(x,s,y,s+\Delta t)dy\\
+\sigma^2(x, s) &= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t} \int_{\mathbb{R}} (y - x)^2 p(x,s,y,s+\Delta t)dy\\
+0 &= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t} \int_{\mathbb{R}} |y - x|^q p(x,s,y,s+\Delta t)dy, \hspace{1mm} \text{for all } q > 2
+\end{aligned}
+$$
+Here, $\mu(x, s)$ is the *infinitesimal mean* and $\sigma^2(x, s)$ is the *infinitesimal variance*. The third equation is a technical condition that ensures the **sample paths**, realizations of the process, are continuous.
+
+
+### Forward and backward equations
+
+As usual, we can use the Chapman-Kolmogorov equation to derive Kolmogorov forward and backward equations for a diffusion process. For simplicity, we restrict ourselves to the time-homogeneous case.\
+\
+By time-homogeneity, we can rewrite the transition density as $p(x, x',t)$, where $x$ is the initial state and $x'$ is the endpoint after $t$ units of time. Consider the time derivative of the transition density:
+$$
+\frac{d}{dt}p(x,x',t) = \lim_{\Delta t \rightarrow 0} \frac{p(x,x',t+\Delta t) - p(x,x',t)}{\Delta t}
+$$
+Note that we can expand $p(x,x',t+\Delta t)$ with the Chapman-Kolmogorov equation in two ways:
+$$
+\begin{aligned}
+p(x, x', t+\Delta t) &= \int_{\mathbb{R}} p(x,z,t)p(z,x',\Delta t)dz\\
+p(x,x',t+\Delta t) &= \int_{\mathbb{R}} p(x,z,\Delta t)p(z,x',t)dz
+\end{aligned}
+$$
+The first one corresponds to the forward equation and the second one corresponds to the backward equation. We derive the backward equation first. By Taylor expansion of $p(z,x',t)$ in $z$ about $x$, we get:
+$$
+\begin{aligned}
+p(z,x',t) &= p(x,x',t) + (z-x)\frac{d}{dx}p(x,x',t)+\frac{1}{2}(z-x)^2\frac{d^2}{dx^2}p(x,x',t) + O(\Delta t^3)
+\end{aligned}
+$$
+Substituting back, we have:
+$$
+\begin{aligned}
+p(x,x',t+\Delta t) - p(x, x', t) &= p(x,x',t) \int_{\mathbb{R}} p(x,z,\Delta t)dz \\ &+ \frac{d}{dx}p(x,x',t)\int_{\mathbb{R}}(z-x)p(x,z,\Delta t)dz \\ &+\frac{1}{2}\frac{d^2}{dx^2}p(x,x',t) \int_{\mathbb{R}} (z-x)^2 p(x,z,\Delta t)dz \\ &+ O(\Delta t^3) \\ &- p(x,x',t)
+\end{aligned}
+$$
+Plugging in the definition of diffusion process and divide both sides of the equation by $\Delta t$. Take the limit as $\Delta t \rightarrow 0$, we obtain the **backward equation**:
+$$
+\frac{d}{dt}p(x,x',t) = \mu(x) \frac{d}{dx}p(x,x',t) + \frac{1}{2} \sigma^2(x) \frac{d^2}{dx^2}p(x,x',t)
+$$
+It is a backward equation because it captures the dynamics of all the states going backward in time.\
+\
+To derive the forward equation, we first change the notation of transition density to $p(x_0, x, t)$. Here, the initial state is $x_0$, and $x$ is the endpoint after $t$ units of time. Again, we have the following time derivative:
+$$
+\begin{aligned}
+\frac{d}{dt}p(x_0,x,t) &= \lim_{\Delta t \rightarrow 0} \frac{p(x_0,x,t+\Delta t) - p(x_0,x,t)}{\Delta t} \\ &= \lim_{\Delta t \rightarrow 0} \frac{\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz - p(x_0,x,t)}{\Delta t}
+\end{aligned}
+$$
+Instead of performing Taylor expansion, we adopt a different strategy. The intuition behind this strategy is that if we want to show two functions (say $f(x)$ and $g(x)$) are identical, we can instead demonstrate that $\int_{\mathbb{R}}f(x)h(x)dx =\int_{\mathbb{R}}g(x)h(x)dx$ for all $h(x)$ with some good properties (e.g.: smooth, compactly supported). This set of $h(x)$ is called the set of **test functions**. If you find it confusing, it's okay to take it for granted as this is a very standard trick in mathematical analysis. If you want to see more details, check out this Wikipedia page on **distribution**: https://en.wikipedia.org/wiki/Distribution_(mathematics). \
+\
+We pick some smooth, compactly supported test function $h$ and evaluate the following integral:
+$$
+\begin{aligned}
+\int_{\mathbb{R}}h(x)dx\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz &= \int_{\mathbb{R}}h(x)\{\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz\}dx \hspace{10mm} (*) \\ &= \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz
+\end{aligned}
+$$
+Now we can do Taylor expansion for $h(x)$ about $z$. Leveraging the definition of diffusion process and dropping the higher-order terms, we have for small $\Delta t$:
+$$
+\begin{aligned}
+\int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}}h(x)p(z,x,\Delta t)dxdz &= \int_{\mathbb{R}}p(x_0,z,t)\int_{\mathbb{R}} [h(z) + (x-z) \frac{d}{dz}h(z)+\frac{1}{2} (x-z)^2 \frac{d^2}{dz^2}h(z) + O(\Delta t^3)] p(z,x,\Delta t)dxdz \\ &= \int_{\mathbb{R}}p(x_0,z,t) [h(z) + \mu(z) \frac{d}{dz}h(z)\Delta t + \frac{1}{2} \sigma^2(z) \frac{d^2}{dz^2}h(z) \Delta t] dz \\ &= \int_{\mathbb{R}} p(x_0,z,t) h (z) dz + \Delta t \int_{\mathbb{R}} p(x_0,z,t) \mu(z) h'(z) dz + \Delta t \int_{\mathbb{R}} p(x_0,z,t) \frac{1}{2} \sigma^2(z) h''(z) dz \\ &=  \int_{\mathbb{R}} p(x_0,z,t) h (z) dz - \Delta t \int_{\mathbb{R}} h(z) \frac{d}{dz}\{p(x_0,z,t) \mu(z)\} dz + \Delta t \int_{\mathbb{R}} \frac{1}{2} h(z) \frac{d^2}{dz^2}\{p(x_0,z,t)\sigma^2(z)\}dz \\ &= \int_{\mathbb{R}} h(x) [p(x_0,x,t) - \Delta t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2} \Delta t \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}] dx \hspace{10mm} (**)
+\end{aligned}
+$$
+The calculations might seem a bit daunting at first glance. However, note that because $h$ and $h'$ both have compact support, they vanish at $-\infty$ and $\infty$. Using this fact, we can compute the integrals easily. Specifically, the fourth equality follows from integration by part, and $\int_{\mathbb{R}} h'(x) f(x) dx$ is just $-\int_{\mathbb{R}} h(x) f'(x) dx$ in this case.\
+\
+Now, comparing $(*)$ with $(**)$ gives:
+$$
+\int_{\mathbb{R}}p(x_0,z,t)p(z,x,\Delta t)dz = p(x_0,x,t) - \Delta t\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2} \Delta t \frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}
+$$
+Reorder the terms and take the limit as $\Delta t \rightarrow 0$, we obtain the **forward equation**:
+$$
+\frac{d}{dt}p(x_0,x,t) = -\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2}\frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\}
+$$
+The Kolmogorov forward equation is also referred to as the *Fokker-Plank equation*. It is a forward equation because it captures the dynamics of all the states going forward in time.\
+\
+In summary, for time-homogeneous diffusion process, we have:
+$$
+\begin{aligned}
+\frac{d}{dt}p(x_0,x,t) &= -\frac{d}{dx}\{p(x_0,x,t) \mu(x)\} + \frac{1}{2}\frac{d^2}{dx^2}\{p(x_0,x,t)\sigma^2(x)\} \hspace{10mm} \text{(forward equation)} \\
+\frac{d}{dt}p(x,x',t) &= \mu(x) \frac{d}{dx}p(x,x',t) + \frac{1}{2} \sigma^2(x) \frac{d^2}{dx^2}p(x,x',t) \hspace{22mm} \text{(backward equation)}
+\end{aligned}
+$$
+Though not to be derived, for completeness, here are the forward and backward equations corresponding to nonhomogeneous diffusion process:
+$$
+\begin{aligned}
+\frac{d}{dt}p(x,s,y,t) &= -\frac{d}{dy}\{p(x,s,y,t)\mu(y, t)\} + \frac{1}{2}\frac{d^2}{dy^2}\{p(x,s,y,t)\sigma^2(y,t)\} \hspace{10mm} \text{(forward equation)} \\
+\frac{d}{dt}p(x,s,y,t) &= -\mu(x,t) \frac{d}{dx}p(x,s,y,t) - \frac{1}{2}\sigma^2(x,t)\frac{d^2}{dx^2}p(x,s,y,t) \hspace{17mm} \text{(backward equation)}
+\end{aligned}
+$$
+
+### Main reference
+
+* *An Introduction to Stochastic Processes with Applications to Biology by Linda J. S. Allen*
+
+
