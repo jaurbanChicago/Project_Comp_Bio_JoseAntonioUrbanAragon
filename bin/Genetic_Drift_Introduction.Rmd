@@ -150,7 +150,7 @@ The Markov chain model of genetic drift will be explained in the following [vign
 
 
 The diffusion process model of genetic drift will be explained in the following vignettes:
-  * [Introduction to Difussion Processes]()
+  * [Introduction to Difussion Processes](https://jaurbanchicago.github.io/docs/diffusion_process.html)
   * [Difussion Processes and Genetic Drift]()
 
 
