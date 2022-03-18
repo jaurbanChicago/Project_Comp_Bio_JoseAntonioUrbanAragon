@@ -523,15 +523,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree742e5e63d0481f4d59459539a011273ff33a57c5targetblank742e5e6a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreefccedde7c6b18b10abe2d9f022ebee0283e2bad5targetblankfcceddea">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/742e5e63d0481f4d59459539a011273ff33a57c5" target="_blank">742e5e6</a>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/fccedde7c6b18b10abe2d9f022ebee0283e2bad5" target="_blank">fccedde</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotree742e5e63d0481f4d59459539a011273ff33a57c5targetblank742e5e6a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjaurbanChicagojaurbanChicagogithubiotreefccedde7c6b18b10abe2d9f022ebee0283e2bad5targetblankfcceddea"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -541,7 +541,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/742e5e63d0481f4d59459539a011273ff33a57c5" target="_blank">742e5e6</a>.
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/tree/fccedde7c6b18b10abe2d9f022ebee0283e2bad5" target="_blank">fccedde</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -611,6 +611,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jaurbanChicago/jaurbanChicago.github.io/blob/a232a334a249e4b5be7a32121f6933b2510cc70a/bin/Genetic_Drift_Intro.Rmd" target="_blank">a232a33</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+<td>
+Updated intro
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jaurbanChicago/jaurbanChicago.github.io/a232a334a249e4b5be7a32121f6933b2510cc70a/docs/Genetic_Drift_Intro.html" target="_blank">a232a33</a>
+</td>
+<td>
+jaurbanChicago
+</td>
+<td>
+2022-03-18
+</td>
+<td>
+Updated intro
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -815,16 +849,19 @@ chain)</li>
 Wright-Fisher population, we must first get into the details of an
 important discrete probability distribution: <strong>the binomial
 distribution.</strong><br />
+<br />
 A binomial distribution is a discrete probability distribution that
 defines the probability distribution for the sum of <span
 class="math inline">\(N\)</span> independent samples of a Bernoulli
-variable [1]. In terms of two alleles <span
+variable [1]. Suppose in a diploid population of <span
+class="math inline">\(N\)</span> individuals, we have two alleles: <span
 class="math inline">\(A\)</span> and <span
-class="math inline">\(a\)</span> and to describe the sampling of alleles
-from a gamete pool of a N individuals population, the following formula
-is useful:</p>
+class="math inline">\(a\)</span>. To describe the sampling of alleles
+from the gamete pool of this population, we model the number of <span
+class="math inline">\(A\)</span> allele, <span
+class="math inline">\(N_A\)</span>:</p>
 <p><span class="math display">\[
-P_{i=A}={2N \choose i}p^{i}(1-p)^{2N-i} \\
+P(N_A = i)={2N \choose i}p^{i}(1-p)^{2N-i} \\
 \]</span> This formula describes the probability of sampling <span
 class="math inline">\(i\)</span> <span class="math inline">\(A\)</span>
 alleles in a sample of <span class="math inline">\(2N\)</span> alleles
@@ -840,26 +877,28 @@ probability <span class="math inline">\(p\)</span> and <span
 class="math inline">\(1-p\)</span>, respectively [1]. With some
 knowledge of the properties of the binomial probability distribution, we
 can realize that the Wright-Fisher model is a very good approximation to
-model genetic drift [1]. Some of the properties of the Bernoulli random
+model genetic drift [1]. Some of the properties of the binomial random
 variables will helps to better understand some specific behaviors of
-allele frequencies under the action of genetic drift. Some of these
-properties are:</p>
+allele frequencies under the action of genetic drift. Let <span
+class="math inline">\(P_t\)</span> be the allele frequency of <span
+class="math inline">\(A\)</span> at generation <span
+class="math inline">\(t\)</span> and <span
+class="math inline">\(X_t\)</span> be the number of <span
+class="math inline">\(A\)</span> allele at generation <span
+class="math inline">\(t\)</span>. For a diploid population of constant
+size <span class="math inline">\(N\)</span>, we have:</p>
 <p><span class="math display">\[
-\sigma^2=p(1-p) \space \mathbb{for \space a \space single \space
-Bernoulli \space variable} \\
-\mathbb{SE(standard \space error)}=\sqrt{\frac{2p(1-p)}{2N}} \\
-\mathbb{Additionally, we \space can \space also \space write \space
-formulas \space in \space terms \space of \space conditional \space
-expectation \space and \space conditional \space variance:} \\
-\mathbb{E}(p_{t+1}|p_t)=p_t \\
-\mathbb{Var}(p_{t+1}|p_t)=\frac{p_t(1-p_t)}{2N} \\
-p_{t}= \mathbb{frequency \space allele \space A \space in \space
-generation \space t} \\
-p_{t+1}= \mathbb{frequency \space allele \space A \space in \space
-generation \space t+1}\\
-\]</span></p>
-<p>As we may infer from the formulas, the maximum variability in the
-outcomes of the alleles’ binomial sampling process will occur when
+\begin{aligned}
+\mathbb{E}[P_{t+1} \mid P_t, N] &amp;= \mathbb{E}[\frac{X_{t+1}}{2N}
+\mid P_t, N] \\ &amp;= \frac{1}{2N} \mathbb{E}[X_{t+1} \mid P_t, N] \\
+&amp;= \frac{1}{2N}2NP_t \\ &amp;= P_t\\
+\\
+\text{Var}[P_{t+1} \mid P_t, N] &amp;= \text{Var}[\frac{X_{t+1}}{2N}
+\mid P_t, N] \\ &amp;= \frac{1}{4N^2} \text{Var}[X_{t+1} \mid P_t, N] \\
+&amp;= \frac{1}{4N^2}2NP_t(1 - P_t) \\ &amp;= \frac{P_t(1 - P_t)}{2N}
+\end{aligned}
+\]</span> As we may infer from the formulas, the maximum variability in
+the outcomes of the alleles’ binomial sampling process will occur when
 <strong>the frequency <span class="math inline">\(p\)</span> of <span
 class="math inline">\(A\)</span> equals the frequency <span
 class="math inline">\(1-p\)</span> of <span
@@ -1043,7 +1082,6 @@ Processes and Genetic Drift</a></li>
 <li><p>Hartl, D. L. (2020).<em>A primer of population genetics and
 genomics</em>. Oxford University Press,147-173.</p></li>
 </ol>
-<p>sessionInfo()</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
